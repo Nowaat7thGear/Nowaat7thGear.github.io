@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>7thgear</title>
+    <style>
+        html {
+          height: 100vh;
+          widht: 100vw;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #DFDFDF;
+            background-image: radial-gradient(circle at 50% 0, #FBFBFB, #7A7A7A);
+        }
+        header {
+            display: flex;
+            margin: 30px;
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-decoration: none;
+            color: inherit;
+            width: 175px;
+        }
+        .main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 900px;
+        }
+        .main h1 {
+          text-align: center;
+          text-shadow: 0 8px 16px rgba(0, 0, 0, .06), 0 2px 4px rgba(0, 0, 0, .1), 0 1px rgba(0, 0, 0, .3);
+          padding-left: 48px;
+          padding-right: 48px;
+          font-size: 48px;
+          line-height: 56px;
+        }
+        .main h2 {
+          text-align: center;
+          margin-bottom: 40px;
+          font-size: 28px;
+          font-weight: 400;
+        }
+        .main h4 {
+          text-align: center;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 20px;
+        }
+        form, #submit-msg {
+            margin-top: 20px;
+            height: 50px;
+        }
+        input[type] {
+            font-size: 16px;
+            border-radius: 8px;
+            border: 0 #FFF;
+            padding: 8px 12px;
+            line-height: 30px;
+        }
+        input[type=email] {
+          width: 530px;
+          font-size: 16px;
+          box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), 0 4px 12px rgba(0, 0, 0, .06), 0 1px 2px rgba(0, 0, 0, .08);
+        }
+        input[type=email]:focus {
+          outline: 0;
+        }
+        input[type=submit], #submit-msg {
+          background-color: #FFCC02;
+          box-shadow: inset 0 1px #FFCC02, 0 4px 12px rgba(0, 0, 0, .08), 0 1px 2px rgba(0, 0, 0, .1), inset 0 0 0 1px #EFAE07;
+          cursor: pointer;
+        }
+        #submit-msg {
+          padding: 0 15px;
+          align-items: center;
+          border-radius: 25px;
+        }
+        iframe {
+          visibility: hidden;
+          height: 1px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+      <a href="/" class="brand">
+          <svg width="50" height="33" viewBox="0 0 50 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M15.8071 16.7168C15.8939 16.926 16.0651 17.0874 16.2759 17.159L24.8684 20.078C24.976 20.1146 25.0885 20.1259 25.198 20.1129C25.3021 20.1005 25.4035 20.066 25.4953 20.0103L32.9561 15.4823C33.1557 15.3612 33.2888 15.1525 33.3171 14.9161C33.3455 14.6796 33.2661 14.4415 33.1016 14.27L22.9302 3.66547C22.7565 3.48445 22.5093 3.39914 22.2657 3.43708C22.0224 3.47489 21.8136 3.63092 21.7053 3.8558L15.8234 16.0693C15.7262 16.2712 15.7202 16.5075 15.8071 16.7168Z" fill="#FFCC02"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M25.6777 22.3703C25.6381 22.0769 25.4396 21.8295 25.1654 21.7318L2.51159 13.6589C2.1974 13.547 1.85095 13.6546 1.65471 13.9252C1.45861 14.1959 1.45782 14.5673 1.6528 14.844L12.8598 30.7452C13.0292 30.9856 13.3065 31.101 13.5745 31.069C13.6896 31.0553 13.803 31.0144 13.9053 30.9444L25.3522 23.116C25.5912 22.9525 25.7172 22.6637 25.6777 22.3703Z" fill="#EFAE07"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M47.115 8.30681C46.8582 8.08699 46.4941 8.06079 46.2152 8.24205L13.2671 29.6477C12.9689 29.8415 12.8437 30.2212 12.9654 30.5642C13.0871 30.9073 13.4231 31.1205 13.7757 31.0802L39.3917 28.1525L39.3954 28.152C39.6684 28.1195 39.9016 27.9412 40.0047 27.6813L47.3368 9.20299C47.4613 8.88928 47.3715 8.52656 47.115 8.30681Z" fill="#FFCC02"/>
+          </svg>
+          <h1 class="name">7thgear</h1>
+      </a>
+    </header>
+    <div class="main">
+      <h1>Unlock powerful meeting insights for accelerating business growth</h1>
+      <h2>Stay ahead by tracking, organizing and predicting your meeting insights seamlessly</h2>
+      <form id="email-form" target="response-iframe" action="https://docs.google.com/forms/d/e/1FAIpQLSenyJoQ2hQkkBGfj2C5HQ0dFJNep7sbEBVh_ENjFHKwzAHHGw/formResponse" style="display: block;">
+          <input type="email" id="email" name="entry.245439686" placeholder="Enter your work email" maxlength="256" required>
+          <input type="submit" value="Request Early Access">
+      </form>
+      <div id="submit-msg" style="display: none;">Thank you for your interest! We will be in touch soon.</div>
+      <h4>Launching Soon !</h4>
+    </div>
+    <iframe id="response-iframe" name="response-iframe"></iframe>
+    <script type="text/javascript">
+       const emailFormEl = document.getElementById('email-form');
+       const submitMsgEl = document.getElementById('submit-msg');
+       const iframeEl = document.getElementById('response-iframe');
+
+       // set the target on the form to point to a hidden iframe
+       // some browsers need the target set via JavaScript, no idea why...
+       emailFormEl.target = 'response-iframe';
+
+       // detect when the iframe reloads
+       if (iframeEl) {
+         iframeEl.onload = function () {
+           // now you can do stuff, such as displaying a message or redirecting to a new page.
+           emailFormEl.style.display = 'none';
+           submitMsgEl.style.display = 'flex';
+         }
+       }
+   </script>
+</body>
+</html>
