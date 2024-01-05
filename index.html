@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>7thgear</title>
+    <title>7thgear.ai</title>
     <style>
         html {
           height: 100vh;
@@ -53,7 +53,7 @@
           font-weight: 400;
           line-height: 20px;
         }
-        form, #submit-msg {
+        form, #submit_msg {
             margin-top: 20px;
             height: 50px;
         }
@@ -72,12 +72,12 @@
         input[type=email]:focus {
           outline: 0;
         }
-        input[type=submit], #submit-msg {
+        input[type=submit], #submit_msg {
           background-color: #FFCC02;
           box-shadow: inset 0 1px #FFCC02, 0 4px 12px rgba(0, 0, 0, .08), 0 1px 2px rgba(0, 0, 0, .1), inset 0 0 0 1px #EFAE07;
           cursor: pointer;
         }
-        #submit-msg {
+        #submit_msg {
           padding: 0 15px;
           align-items: center;
           border-radius: 25px;
@@ -85,6 +85,7 @@
         iframe {
           visibility: hidden;
           height: 1px;
+          width: 1px;
         }
     </style>
 </head>
@@ -102,29 +103,39 @@
     <div class="main">
       <h1>Unlock powerful meeting insights for accelerating business growth</h1>
       <h2>Stay ahead by tracking, organizing and predicting your meeting insights seamlessly</h2>
-      <form id="email-form" target="response-iframe" action="https://docs.google.com/forms/d/e/1FAIpQLSenyJoQ2hQkkBGfj2C5HQ0dFJNep7sbEBVh_ENjFHKwzAHHGw/formResponse" style="display: block;">
-          <input type="email" id="email" name="entry.245439686" placeholder="Enter your work email" maxlength="256" required>
-          <input type="submit" value="Request Early Access">
+      <form name="user_interested_form" id="email_form" target="response_iframe" action="https://docs.google.com/forms/d/e/1FAIpQLSenyJoQ2hQkkBGfj2C5HQ0dFJNep7sbEBVh_ENjFHKwzAHHGw/formResponse" style="display: block;">
+          <input type="email" id="email" name="entry.245439686" placeholder="Enter your work email" maxlength="256" autocomplete="off" required>
+          <input type="submit" id="submit" value="Request Early Access">
       </form>
-      <div id="submit-msg" style="display: none;">Thank you for your interest! We will be in touch soon.</div>
+      <div id="submit_msg" style="display: none;">Thank you for your interest! We will be in touch soon.</div>
       <h4>Launching Soon !</h4>
     </div>
-    <iframe id="response-iframe" name="response-iframe"></iframe>
+    <iframe id="response_iframe" name="response_iframe"></iframe>
     <script type="text/javascript">
-       const emailFormEl = document.getElementById('email-form');
-       const submitMsgEl = document.getElementById('submit-msg');
-       const iframeEl = document.getElementById('response-iframe');
+       var emailFormEl = document.getElementById("email_form");
+       var emailInputEl = document.getElementById("email");
+       var submitBtnEl = document.getElementById("submit");
+       var submitMsgEl = document.getElementById("submit_msg");
+       var iframeEl = document.getElementById("response_iframe");
+       var emailFormSubmitted = false; // Flag to track form submission
 
        // set the target on the form to point to a hidden iframe
        // some browsers need the target set via JavaScript, no idea why...
-       emailFormEl.target = 'response-iframe';
+       emailFormEl.target = "response_iframe";
+       emailFormEl.addEventListener("submit", function() {
+         emailFormSubmitted = true; // Set flag to true when form is submitted
+         submitMsgEl.value = "Submitting..."
+       });
 
        // detect when the iframe reloads
        if (iframeEl) {
          iframeEl.onload = function () {
-           // now you can do stuff, such as displaying a message or redirecting to a new page.
-           emailFormEl.style.display = 'none';
-           submitMsgEl.style.display = 'flex';
+            if (emailFormSubmitted) {
+             // now you can do stuff, such as displaying a message or redirecting to a new page.
+             submitMsgEl.style.display = "flex";
+             emailFormEl.parentNode.removeChild(emailFormEl);
+             iframeEl.parentNode.removeChild(iframeEl); // iframe deletion is a workaround to bypass firefox bug
+           }
          }
        }
    </script>
