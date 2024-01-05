@@ -127,7 +127,8 @@
        emailFormEl.target = "response_iframe";
        emailFormEl.addEventListener("submit", function() {
          emailFormSubmitted = true; // Set flag to true when form is submitted
-         submitBtnEl.value = "Submitting..."
+         submitBtnEl.disabled = true;
+         submitBtnEl.value = "Requesting...";
        });
 
        // detect when the iframe reloads
