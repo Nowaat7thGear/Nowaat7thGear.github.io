@@ -1,144 +1,85 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>7thgear.ai</title>
-    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
-    <style>
-        html {
-          height: 100vh;
-          widht: 100vw;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background: #DFDFDF;
-            background-image: radial-gradient(circle at 50% 0, #FBFBFB, #7A7A7A);
-        }
-        header {
-            display: flex;
-            margin: 30px;
-        }
-        .brand {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            text-decoration: none;
-            color: inherit;
-            width: 175px;
-        }
-        .main {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 900px;
-        }
-        .main h1 {
-          text-align: center;
-          text-shadow: 0 8px 16px rgba(0, 0, 0, .06), 0 2px 4px rgba(0, 0, 0, .1), 0 1px rgba(0, 0, 0, .3);
-          padding-left: 48px;
-          padding-right: 48px;
-          font-size: 48px;
-          line-height: 56px;
-        }
-        .main h2 {
-          text-align: center;
-          margin-bottom: 40px;
-          font-size: 28px;
-          font-weight: 400;
-        }
-        .main h4 {
-          text-align: center;
-          font-size: 16px;
-          font-weight: 400;
-          line-height: 20px;
-        }
-        form, #submit_msg {
-            margin-top: 20px;
-            height: 50px;
-        }
-        input[type] {
-            font-size: 16px;
-            border-radius: 8px;
-            border: 0 #FFF;
-            padding: 8px 12px;
-            line-height: 30px;
-        }
-        input[type=email] {
-          width: 530px;
-          font-size: 16px;
-          box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), 0 4px 12px rgba(0, 0, 0, .06), 0 1px 2px rgba(0, 0, 0, .08);
-        }
-        input[type=email]:focus {
-          outline: 0;
-        }
-        input[type=submit] {
-          width: 180px;
-          cursor: pointer;
-        }
-        input[type=submit], #submit_msg {
-          background: linear-gradient(55deg, #bd00cd,#2d396c);
-          box-shadow: inset 0 1px #bd00cd, 0 4px 12px #7d8195, 0 1px 2px rgba(0, 0, 0, .1), inset 0 0 0 1px #7b7c84;
-          color: #FFF;
-        }
-        #submit_msg {
-          padding: 0 15px;
-          align-items: center;
-          border-radius: 25px;
-        }
-        iframe {
-          visibility: hidden;
-          height: 1px;
-          width: 1px;
-        }
-    </style>
-</head>
-<body>
-    <header>
-      <a href="/" class="brand">
-          <img src="./assets/logo.svg" alt="7thgear.ai">
-      </a>
-    </header>
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="styles.module.css" />
+  </head>
+  <body>
+    <section id="header-placeholder"></section>
     <div class="main">
       <h1>Unlock powerful meeting insights for accelerating business growth</h1>
-      <h2>Stay ahead by tracking, organizing and predicting your meeting insights seamlessly</h2>
-      <form name="user_interested_form" id="email_form" target="response_iframe" action="https://docs.google.com/forms/d/e/1FAIpQLSenyJoQ2hQkkBGfj2C5HQ0dFJNep7sbEBVh_ENjFHKwzAHHGw/formResponse" style="display: block;">
-          <input type="email" id="email" name="entry.245439686" placeholder="Enter your work email" maxlength="256" autocomplete="off" required>
-          <input type="submit" id="submit" value="Request Early Access">
+      <h2>
+        Stay ahead by tracking, organizing and predicting your meeting insights
+        seamlessly
+      </h2>
+      <form
+        name="user_interested_form"
+        id="email_form"
+        target="response_iframe"
+        action="https://docs.google.com/forms/d/e/1FAIpQLSenyJoQ2hQkkBGfj2C5HQ0dFJNep7sbEBVh_ENjFHKwzAHHGw/formResponse"
+        style="display: block"
+      >
+        <input
+          type="email"
+          id="email"
+          name="entry.245439686"
+          placeholder="Enter your work email"
+          maxlength="256"
+          autocomplete="off"
+          required
+        />
+        <input type="submit" id="submit" value="Request Early Access" />
       </form>
-      <div id="submit_msg" style="display: none;">Thank you for your interest! We will be in touch soon.</div>
+      <div id="submit_msg" style="display: none">
+        Thank you for your interest! We will be in touch soon.
+      </div>
       <h4>Launching Soon !</h4>
     </div>
+    <div id="footer-placeholder"></div>
     <iframe id="response_iframe" name="response_iframe"></iframe>
     <script type="text/javascript">
-       var emailFormEl = document.getElementById("email_form");
-       var emailInputEl = document.getElementById("email");
-       var submitBtnEl = document.getElementById("submit");
-       var submitMsgEl = document.getElementById("submit_msg");
-       var iframeEl = document.getElementById("response_iframe");
-       var emailFormSubmitted = false; // Flag to track form submission
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("header.html")
+          .then((response) => response.text())
+          .then((html) => {
+            document.getElementById("header-placeholder").innerHTML = html;
+          });
+        fetch("footer.html")
+          .then((response) => response.text())
+          .then((html) => {
+            document.getElementById("footer-placeholder").innerHTML = html;
+            var currentYear = new Date().getFullYear();
+            document.getElementById("copyright_year").innerText = currentYear;
+          });
+      });
+      var emailFormEl = document.getElementById("email_form");
+      var emailInputEl = document.getElementById("email");
+      var submitBtnEl = document.getElementById("submit");
+      var submitMsgEl = document.getElementById("submit_msg");
+      var iframeEl = document.getElementById("response_iframe");
+      var emailFormSubmitted = false; // Flag to track form submission
 
-       // set the target on the form to point to a hidden iframe
-       // some browsers need the target set via JavaScript, no idea why...
-       emailFormEl.target = "response_iframe";
-       emailFormEl.addEventListener("submit", function() {
-         emailFormSubmitted = true; // Set flag to true when form is submitted
-         submitBtnEl.disabled = true;
-         submitBtnEl.value = "Requesting...";
-       });
+      // set the target on the form to point to a hidden iframe
+      // some browsers need the target set via JavaScript, no idea why...
+      emailFormEl.target = "response_iframe";
+      emailFormEl.addEventListener("submit", function () {
+        emailFormSubmitted = true; // Set flag to true when form is submitted
+        submitBtnEl.disabled = true;
+        submitBtnEl.value = "Requesting...";
+      });
 
-       // detect when the iframe reloads
-       if (iframeEl) {
-         iframeEl.onload = function () {
-            if (emailFormSubmitted) {
-             // now you can do stuff, such as displaying a message or redirecting to a new page.
-             submitMsgEl.style.display = "flex";
-             emailFormEl.parentNode.removeChild(emailFormEl);
-             iframeEl.parentNode.removeChild(iframeEl); // iframe deletion is a workaround to bypass firefox bug
-           }
-         }
-       }
-   </script>
-</body>
+      // detect when the iframe reloads
+      if (iframeEl) {
+        iframeEl.onload = function () {
+          if (emailFormSubmitted) {
+            // now you can do stuff, such as displaying a message or redirecting to a new page.
+            submitMsgEl.style.display = "flex";
+            emailFormEl.parentNode.removeChild(emailFormEl);
+            iframeEl.parentNode.removeChild(iframeEl); // iframe deletion is a workaround to bypass firefox bug
+          }
+        };
+      }
+    </script>
+  </body>
 </html>
