@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <title>7thgear.ai</title>
-    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="styles.module.css" />
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/styles.module.css" />
     <style>
       .header-container {
         display: flex;
@@ -252,12 +252,12 @@
     <div id="footer-placeholder"></div>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        fetch("header.html")
+        fetch("/header.html")
           .then((response) => response.text())
           .then((html) => {
             document.getElementById("header-placeholder").innerHTML = html;
           });
-        fetch("footer.html")
+        fetch("/footer.html")
           .then((response) => response.text())
           .then((html) => {
             document.getElementById("footer-placeholder").innerHTML = html;
