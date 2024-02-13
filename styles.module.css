@@ -8,11 +8,11 @@ body {
   flex-direction: column;
   align-items: center;
   height: 100vh;
-  background: #dfdfdf;
-  background-image: radial-gradient(circle at 50% 0, #fbfbfb, #7a7a7a);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+  background: #ffffff;
+  /* background-image: radial-gradient(circle at 50% 0, #fbfbfb, #7a7a7a); */
+  /* background-repeat: no-repeat; */
+  /* background-attachment: fixed; */
+  /* background-size: cover; */
   padding: 0;
   margin: 0;
 }

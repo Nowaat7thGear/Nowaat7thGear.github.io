@@ -10,9 +10,9 @@
   .container {
     position: relative;
     display: flex;
-    justify-content: center;
-    padding-left: 10px;
-    padding-right: 20px;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
   }
   .element-button {
     display: inline-flex;
@@ -24,14 +24,15 @@
     padding: 10px 12px 10px 12px;
     color: #fff;
     cursor: pointer;
+    text-decoration: none;
   }
 </style>
 <div class="container">
   <a href="/" class="brand">
     <img src="/assets/logo.svg" alt="7thgear.ai" />
   </a>
-  <!-- <div class="element">
-    <a class="element-button">Login</a>
-    <a class="element-button">Sign Up</a>
-  </div> -->
+  <div class="element">
+    <a class="element-button" href="/login/" target="_blank">Login</a>
+    <!-- <a class="element-button">Sign Up</a> -->
+  </div>
 </div>
