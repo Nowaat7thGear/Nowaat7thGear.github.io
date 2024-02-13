@@ -1,47 +1,99 @@
-<head>
-  <style>
-    #footer-placeholder {
-      width: 100%;
-      height: 40px;
-    }
-    .footer-section {
-      /* position: fixed; */
-      left: 0;
-      /* bottom: 0; */
-      bottom: 0;
-      width: 100%;
-      background-color: #333;
-      color: #fff;
-      padding: 15px 0px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .footer-section > :first-child {
-      padding-left: 20px;
-    }
-
-    .footer-section > :last-child {
-      padding-right: 20px;
-    }
-
-    .footer-section a {
-      color: #fff;
-      text-decoration: none;
-      margin-left: 20px;
-      line-height: 24px;
-    }
-
-    .footer-section a:hover {
-      text-decoration: underline;
-    }
-  </style>
-</head>
-<section class="footer-section">
-  <div>© <span id="copyright_year"></span> 7thGear All Rights Reserved.</div>
-  <div>
-    <a href="/terms-of-service/">Terms of Service</a>
-    <a href="/privacy-policy/">Privacy Policy</a>
+<style>
+  #footer-placeholder {
+    position: relative;
+    background-image: url("../assets/footer-gradiant.png");
+    background-size: cover;
+    background-position: center;
+    padding: 80px;
+    width: 100%;
+  }
+  .footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    padding: 0px 80px;
+  }
+  .footer-information {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .join-interest {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .join-interest-text {
+    color: white;
+  }
+  .join-interest-button {
+    width: 240px;
+    height: 64px;
+    border-radius: 8px;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    display: inline-flex;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    word-wrap: break-word;
+  }
+  .footer-meta {
+    padding-top: 32px;
+    border-top: 1px #eaecf0 solid;
+    justify-content: space-between;
+    align-items: center;
+    display: inline-flex;
+  }
+  .footer-copyright {
+    color: #667085;
+    font-size: 16px;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 24px;
+    word-wrap: break-word;
+  }
+  .terms-privacy {
+    color: #fff;
+    font-size: 16px;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 24px;
+    word-wrap: break-word;
+  }
+  .footer-icons {
+    justify-content: flex-start;
+    align-items: center;
+    gap: 24px;
+    display: flex;
+  }
+</style>
+<div class="footer-wrapper">
+  <div class="footer-information">
+    <img src="../assets/7th-gear.svg" alt="7th Gear" style="width: 143px" />
+    <div class="join-interest">
+      <div class="primary-header join-interest-text">
+        Get ready to shift your career to the highest gear
+      </div>
+      <div id="btnJoinInterestList" class="primary-button join-interest-button">
+        Join Interest List
+      </div>
+    </div>
   </div>
-</section>
+  <div class="footer-meta">
+    <div class="footer-copyright">
+      © <span id="copyright_year"></span> 7th Gear. All rights reserved.
+    </div>
+    <div class="footer-icons">
+      <a class="terms-privacy" href="/terms-of-service/">Terms of Service</a>
+      <a class="terms-privacy" href="/privacy-policy/">Privacy Policy</a>
+      <img src="/assets/footer-twitter.svg" alt="Twitter" />
+      <img src="/assets/footer-linkedIn.svg" alt="LinkedIn" />
+      <img src="/assets/footer-facebook.svg" alt="Facebook" />
+    </div>
+  </div>
+</div>

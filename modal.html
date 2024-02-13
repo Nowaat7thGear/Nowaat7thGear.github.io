@@ -1,0 +1,55 @@
+<style>
+  #modal-placeholder {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px; /* Set your desired width */
+    height: 200px; /* Set your desired height */
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  #closeBtn {
+    align-self: flex-end;
+    background-color: lightgray; /* Set your desired background color */
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  #email {
+    flex: 1; /* Takes remaining vertical space */
+    font-size: 1.2em; /* Set your desired font size */
+  }
+
+  #confirmBtn {
+    align-self: center;
+    background-color: #4087fc; /* Set your desired background color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+</style>
+
+<div class="modal-content">
+  <button id="closeBtn">Close</button>
+  <input
+    type="email"
+    id="email"
+    name="entry.245439686"
+    placeholder="Enter your work email"
+    maxlength="256"
+    autocomplete="off"
+    required
+  />
+  <button type="button" id="confirmBtn">Confirm</button>
+</div>

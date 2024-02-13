@@ -1,0 +1,87 @@
+<style>
+  #landing-placeholder {
+    padding: 80px;
+    padding-top: 160px;
+    width: 100%;
+    background: #0e0e10;
+    min-height: 500px;
+    position: relative;
+  }
+  .landing-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 0px 80px;
+  }
+  .landing-gradiant-brand {
+    background: linear-gradient(90deg, #652492, #63fcba);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 70px;
+    font-weight: 700;
+    line-height: 84px;
+    word-wrap: break-word;
+  }
+  .landing-header {
+    color: white;
+    font-size: 70px;
+    font-weight: 700;
+    line-height: 84px;
+    word-wrap: break-word;
+  }
+  .landing-subtext {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  .vector-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    float: right;
+    width: 70%;
+    height: 50%;
+    /* border: 1px solid white; */
+  }
+  .vector-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+      to bottom right,
+      transparent calc(50% - 1px),
+      #9b9b9b,
+      transparent calc(50% + 1px)
+    );
+  }
+</style>
+<div class="landing-wrapper">
+  <div>
+    <span class="landing-gradiant-brand">7thGear:</span>
+    <span class="landing-header">Gen AI powered Employee Growth Platform</span>
+  </div>
+  <div style="display: flex; flex-direction: column; gap: 40px">
+    <div>
+      <div>
+        <span class="primary-font-size landing-subtext">Powering </span>
+        <span class="primary-font-size landing-subtext" style="color: white"
+          >employee growth</span
+        >
+        <span class="primary-font-size landing-subtext">
+          using signals from their daily Rhythms.
+        </span>
+      </div>
+      <img
+        src="../assets/pen-scribble.svg"
+        alt="Pen Scribble"
+        style="padding-left: 50px"
+      />
+    </div>
+  </div>
+  <div id="btnJoinInterestList" class="primary-button join-interest-button">
+    Join Interest List
+  </div>
+  <div class="vector-container"></div>
+</div>

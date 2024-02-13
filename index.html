@@ -7,37 +7,34 @@
   </head>
   <body>
     <section id="header-placeholder"></section>
-    <div class="main">
-      <h1>Unlock powerful meeting insights for accelerating business growth</h1>
-      <h2>
-        Stay ahead by tracking, organizing and predicting your meeting insights
-        seamlessly
-      </h2>
-      <form
-        name="user_interested_form"
-        id="email_form"
-        target="response_iframe"
-        action="https://docs.google.com/forms/d/e/1FAIpQLSenyJoQ2hQkkBGfj2C5HQ0dFJNep7sbEBVh_ENjFHKwzAHHGw/formResponse"
-        style="display: block"
-      >
+    <section id="landing-placeholder"></section>
+    <section id="goals-placeholder"></section>
+    <section id="aiAssitance-placeholder"></section>
+    <section id="analytics-placeholder"></section>
+    <section id="feedback-placeholder"></section>
+    <section id="integration-placeholder"></section>
+    <section id="footer-placeholder"></section>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <button id="closeBtn" class="close"><span>&times;</span></button>
         <input
           type="email"
           id="email"
-          name="entry.245439686"
+          name="join-interest-email"
           placeholder="Enter your work email"
           maxlength="256"
           autocomplete="off"
           required
         />
-        <input type="submit" id="submit" value="Request Early Access" />
-      </form>
-      <div id="submit_msg" style="display: none">
-        Thank you for your interest! We will be in touch soon.
+        <button type="button" id="confirmBtn" class="primary-button">
+          Confirm
+        </button>
       </div>
-      <h4>Launching Soon !</h4>
     </div>
-    <div id="footer-placeholder"></div>
-    <iframe id="response_iframe" name="response_iframe"></iframe>
+    <div id="snackbar">
+      Thanks for showing interest in making employee growth a priority. We will
+      reach out to you shortly.
+    </div>
     <script type="text/javascript">
       document.addEventListener("DOMContentLoaded", function () {
         fetch("header.html")
@@ -45,41 +42,79 @@
           .then((html) => {
             document.getElementById("header-placeholder").innerHTML = html;
           });
+        fetch("/landingPage/index.html")
+          .then((response) => response.text())
+          .then((html) => {
+            document.getElementById("landing-placeholder").innerHTML = html;
+          });
+        fetch("/landingPage/goals.html")
+          .then((response) => response.text())
+          .then((html) => {
+            document.getElementById("goals-placeholder").innerHTML = html;
+          });
+        fetch("/landingPage/aiAssistance.html")
+          .then((response) => response.text())
+          .then((html) => {
+            document.getElementById("aiAssitance-placeholder").innerHTML = html;
+          });
+        fetch("/landingPage/analytics.html")
+          .then((response) => response.text())
+          .then((html) => {
+            document.getElementById("analytics-placeholder").innerHTML = html;
+          });
+        fetch("/landingPage/feedback.html")
+          .then((response) => response.text())
+          .then((html) => {
+            document.getElementById("feedback-placeholder").innerHTML = html;
+          });
+        fetch("/landingPage/integration.html")
+          .then((response) => response.text())
+          .then((html) => {
+            document.getElementById("integration-placeholder").innerHTML = html;
+          });
         fetch("footer.html")
           .then((response) => response.text())
           .then((html) => {
             document.getElementById("footer-placeholder").innerHTML = html;
             var currentYear = new Date().getFullYear();
             document.getElementById("copyright_year").innerText = currentYear;
+
+            // Open the modal when the button is clicked
+            const modal = document.getElementById("btnJoinInterestList");
+
+            document
+              .getElementById("btnJoinInterestList")
+              .addEventListener("click", function () {
+                console.log("cliked");
+                document.getElementById("myModal").style.display = "block";
+              });
+          });
+
+        // Close the modal when the user clicks on the close button
+        document
+          .getElementsByClassName("close")[0]
+          .addEventListener("click", function () {
+            document.getElementById("myModal").style.display = "none";
+          });
+        // Close the modal when the user clicks outside the modal
+        window.addEventListener("click", function (event) {
+          var modal = document.getElementById("myModal");
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        });
+        // Display thank you message and hide form after submission
+        document
+          .getElementById("confirmBtn")
+          .addEventListener("click", function () {
+            document.getElementById("myModal").style.display = "none";
+            var x = document.getElementById("snackbar");
+            x.className = "show";
+            setTimeout(function () {
+              x.className = x.className.replace("show", "");
+            }, 3000);
           });
       });
-      var emailFormEl = document.getElementById("email_form");
-      var emailInputEl = document.getElementById("email");
-      var submitBtnEl = document.getElementById("submit");
-      var submitMsgEl = document.getElementById("submit_msg");
-      var iframeEl = document.getElementById("response_iframe");
-      var emailFormSubmitted = false; // Flag to track form submission
-
-      // set the target on the form to point to a hidden iframe
-      // some browsers need the target set via JavaScript, no idea why...
-      emailFormEl.target = "response_iframe";
-      emailFormEl.addEventListener("submit", function () {
-        emailFormSubmitted = true; // Set flag to true when form is submitted
-        submitBtnEl.disabled = true;
-        submitBtnEl.value = "Requesting...";
-      });
-
-      // detect when the iframe reloads
-      if (iframeEl) {
-        iframeEl.onload = function () {
-          if (emailFormSubmitted) {
-            // now you can do stuff, such as displaying a message or redirecting to a new page.
-            submitMsgEl.style.display = "flex";
-            emailFormEl.parentNode.removeChild(emailFormEl);
-            iframeEl.parentNode.removeChild(iframeEl); // iframe deletion is a workaround to bypass firefox bug
-          }
-        };
-      }
     </script>
   </body>
 </html>
