@@ -25,17 +25,10 @@
   }
   .join-interest-text {
     color: white;
-    font-size: 40px;
-    font-family: Plus Jakarta Sans;
-    font-weight: 700;
-    line-height: 48px;
-    word-wrap: break-word;
   }
   .join-interest-button {
     width: 240px;
     height: 64px;
-    background: linear-gradient(103deg, #b902ca 12%, #32376f 100%);
-    box-shadow: 0px 24px 40px -12px rgba(185, 2, 202, 0.4);
     border-radius: 8px;
     overflow: hidden;
     justify-content: center;
@@ -45,7 +38,6 @@
     cursor: pointer;
     color: white;
     font-size: 20px;
-    font-family: Plus Jakarta Sans;
     font-weight: 700;
     line-height: 24px;
     word-wrap: break-word;
@@ -84,20 +76,24 @@
   <div class="footer-information">
     <img src="../assets/7th-gear.svg" alt="7th Gear" style="width: 143px" />
     <div class="join-interest">
-      <div class="join-interest-text">
+      <div class="primary-header join-interest-text">
         Get ready to shift your career to the highest gear
       </div>
-      <div class="join-interest-button">Join Interest List</div>
+      <div id="btnJoinInterestList" class="primary-button join-interest-button">
+        Join Interest List
+      </div>
     </div>
   </div>
   <div class="footer-meta">
-    <div class="footer-copyright">© 2024 7th Gear. All rights reserved.</div>
+    <div class="footer-copyright">
+      © <span id="copyright_year"></span> 7th Gear. All rights reserved.
+    </div>
     <div class="footer-icons">
       <a class="terms-privacy" href="/terms-of-service/">Terms of Service</a>
       <a class="terms-privacy" href="/privacy-policy/">Privacy Policy</a>
-      <img src="./assets/footer-twitter.svg" alt="Twitter" />
-      <img src="./assets/footer-linkedIn.svg" alt="Twitter" />
-      <img src="./assets/footer-facebook.svg" alt="Twitter" />
+      <img src="/assets/footer-twitter.svg" alt="Twitter" />
+      <img src="/assets/footer-linkedIn.svg" alt="LinkedIn" />
+      <img src="/assets/footer-facebook.svg" alt="Facebook" />
     </div>
   </div>
 </div>

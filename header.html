@@ -5,14 +5,16 @@
     top: 0;
     padding: 20px 0px 20px 0px;
     z-index: 9999;
-    background-color: #c0c0c0;
+    background: rgba(20.11, 20.11, 20.11, 0.4);
+    backdrop-filter: blur(16px);
   }
   .container {
+    padding: 0px 80px;
     position: relative;
     display: flex;
     justify-content: space-between;
-    width: 90%;
-    margin: auto;
+    /* width: 90%;
+    margin: auto; */
   }
   .element-button {
     display: inline-flex;
@@ -26,13 +28,38 @@
     cursor: pointer;
     text-decoration: none;
   }
+  .header-join-button {
+    padding: 8px 16px;
+    background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 0.2) 100%
+    );
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px rgba(255, 255, 255, 0.6) solid;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    display: inline-flex;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    word-wrap: break-word;
+  }
 </style>
 <div class="container">
   <a href="/" class="brand">
     <img src="/assets/logo.svg" alt="7thgear.ai" />
   </a>
   <div class="element">
-    <a class="element-button" href="/login/" target="_blank">Login</a>
+    <!-- <a class="element-button" href="/login/" target="_blank">Login</a> -->
+    <div id="btnJoinInterestList" class="header-join-button">
+      Join Interest List
+    </div>
     <!-- <a class="element-button">Sign Up</a> -->
   </div>
 </div>
