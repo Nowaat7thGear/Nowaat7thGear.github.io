@@ -41,11 +41,21 @@
           .then((response) => response.text())
           .then((html) => {
             document.getElementById("header-placeholder").innerHTML = html;
+            document
+              .getElementById("btnHeaderJoinInterest")
+              .addEventListener("click", function () {
+                document.getElementById("myModal").style.display = "block";
+              });
           });
         fetch("/landingPage/index.html")
           .then((response) => response.text())
           .then((html) => {
             document.getElementById("landing-placeholder").innerHTML = html;
+            document
+              .getElementById("btnLandingJoinInterest")
+              .addEventListener("click", function () {
+                document.getElementById("myModal").style.display = "block";
+              });
           });
         fetch("/landingPage/goals.html")
           .then((response) => response.text())
@@ -78,14 +88,9 @@
             document.getElementById("footer-placeholder").innerHTML = html;
             var currentYear = new Date().getFullYear();
             document.getElementById("copyright_year").innerText = currentYear;
-
-            // Open the modal when the button is clicked
-            const modal = document.getElementById("btnJoinInterestList");
-
             document
-              .getElementById("btnJoinInterestList")
+              .getElementById("btnFooterJoinInterest")
               .addEventListener("click", function () {
-                console.log("cliked");
                 document.getElementById("myModal").style.display = "block";
               });
           });
