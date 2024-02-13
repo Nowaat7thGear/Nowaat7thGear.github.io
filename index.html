@@ -15,27 +15,53 @@
     <section id="integration-placeholder"></section>
     <section id="footer-placeholder"></section>
     <div id="myModal" class="modal">
-      <div class="modal-content">
-        <button id="closeBtn" class="close"><span>&times;</span></button>
-        <input
-          type="email"
-          id="email"
-          name="join-interest-email"
-          placeholder="Enter your work email"
-          maxlength="256"
-          autocomplete="off"
-          required
-        />
-        <button type="button" id="confirmBtn" class="primary-button">
-          Confirm
-        </button>
-      </div>
+      <form
+        name="user_interested_form"
+        id="email_form"
+        target="response_iframe"
+        action="https://docs.google.com/forms/d/e/1FAIpQLSenyJoQ2hQkkBGfj2C5HQ0dFJNep7sbEBVh_ENjFHKwzAHHGw/formResponse"
+        style="display: block"
+      >
+        <div class="modal-content">
+          <button id="closeBtn" class="close"><span>&times;</span></button>
+          <input
+            type="email"
+            id="email"
+            name="join-interest-email"
+            placeholder="Enter your work email"
+            maxlength="256"
+            autocomplete="off"
+            required
+          />
+          <input
+            type="submit"
+            id="submit"
+            value="Submit"
+            class="primary-button"
+          />
+        </div>
+      </form>
     </div>
     <div id="snackbar">
       Thanks for showing interest in making employee growth a priority. We will
       reach out to you shortly.
     </div>
+    <iframe id="response_iframe" name="response_iframe"></iframe>
     <script type="text/javascript">
+      var emailFormEl = document.getElementById("email_form");
+      var submitBtnEl = document.getElementById("submit");
+      var iframeEl = document.getElementById("response_iframe");
+      var emailFormSubmitted = false; // Flag to track form submission
+
+      // set the target on the form to point to a hidden iframe
+      // some browsers need the target set via JavaScript, no idea why...
+      emailFormEl.target = "response_iframe";
+      emailFormEl.addEventListener("submit", function () {
+        emailFormSubmitted = true; // Set flag to true when form is submitted
+        submitBtnEl.disabled = true;
+        submitBtnEl.value = "Requesting...";
+      });
+
       document.addEventListener("DOMContentLoaded", function () {
         fetch("header.html")
           .then((response) => response.text())
@@ -45,6 +71,7 @@
               .getElementById("btnHeaderJoinInterest")
               .addEventListener("click", function () {
                 document.getElementById("myModal").style.display = "block";
+                document.getElementById("email").value = "";
               });
           });
         fetch("/landingPage/index.html")
@@ -55,6 +82,7 @@
               .getElementById("btnLandingJoinInterest")
               .addEventListener("click", function () {
                 document.getElementById("myModal").style.display = "block";
+                document.getElementById("email").value = "";
               });
           });
         fetch("/landingPage/goals.html")
@@ -92,6 +120,7 @@
               .getElementById("btnFooterJoinInterest")
               .addEventListener("click", function () {
                 document.getElementById("myModal").style.display = "block";
+                document.getElementById("email").value = "";
               });
           });
 
@@ -108,17 +137,22 @@
             modal.style.display = "none";
           }
         });
-        // Display thank you message and hide form after submission
-        document
-          .getElementById("confirmBtn")
-          .addEventListener("click", function () {
-            document.getElementById("myModal").style.display = "none";
-            var x = document.getElementById("snackbar");
-            x.className = "show";
-            setTimeout(function () {
-              x.className = x.className.replace("show", "");
-            }, 3000);
-          });
+
+        // detect when the iframe reloads
+        if (iframeEl) {
+          iframeEl.onload = function () {
+            if (emailFormSubmitted) {
+              // now you can do stuff, such as displaying a message or redirecting to a new page.
+              document.getElementById("myModal").style.display = "none";
+              var x = document.getElementById("snackbar");
+              x.className = "show";
+              setTimeout(function () {
+                x.className = x.className.replace("show", "");
+              }, 3000);
+              iframeEl.parentNode.removeChild(iframeEl); // iframe deletion is a workaround to bypass firefox bug
+            }
+          };
+        }
       });
     </script>
   </body>
