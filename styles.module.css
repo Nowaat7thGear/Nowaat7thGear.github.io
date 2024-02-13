@@ -3,7 +3,7 @@ html {
   width: 100vw;
 }
 body {
-  font-family: Plus Jakarta Sans;
+  font-family: "Plus Jakarta Sans", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
