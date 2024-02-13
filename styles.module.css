@@ -47,6 +47,8 @@ input[type="email"]:focus {
 input[type="submit"] {
   width: 180px;
   cursor: pointer;
+  align-self: center;
+  font-size: 16px;
 }
 input[type="submit"],
 #submit_msg {
@@ -146,17 +148,6 @@ iframe {
 
 #email {
   flex: 1;
-}
-
-#confirmBtn {
-  align-self: center;
-  background-color: #4087fc;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
 }
 
 #toastMsg {
