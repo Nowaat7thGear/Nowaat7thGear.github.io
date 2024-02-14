@@ -2,8 +2,13 @@
 <html>
   <head>
     <title>7thgear.ai</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
 
@@ -67,6 +72,21 @@
         submitBtnEl.value = "Requesting...";
       });
 
+      function openModal() {
+        var modal = document.getElementById("myModal");
+        var emailInput = document.getElementById("email");
+        var submitBtn = document.getElementById("submit");
+
+        // Display the modal
+        modal.style.display = "block";
+
+        // Clear the email input field
+        emailInput.value = "";
+
+        // Reset the submit button value
+        submitBtn.value = "Submit";
+      }
+
       document.addEventListener("DOMContentLoaded", function () {
         fetch("header.html")
           .then((response) => response.text())
@@ -74,10 +94,7 @@
             document.getElementById("header-placeholder").innerHTML = html;
             document
               .getElementById("btnHeaderJoinInterest")
-              .addEventListener("click", function () {
-                document.getElementById("myModal").style.display = "block";
-                document.getElementById("email").value = "";
-              });
+              .addEventListener("click", openModal);
           });
         fetch("/landingPage/index.html")
           .then((response) => response.text())
@@ -85,10 +102,7 @@
             document.getElementById("landing-placeholder").innerHTML = html;
             document
               .getElementById("btnLandingJoinInterest")
-              .addEventListener("click", function () {
-                document.getElementById("myModal").style.display = "block";
-                document.getElementById("email").value = "";
-              });
+              .addEventListener("click", openModal);
           });
         fetch("/landingPage/goals.html")
           .then((response) => response.text())
@@ -123,10 +137,7 @@
             document.getElementById("copyright_year").innerText = currentYear;
             document
               .getElementById("btnFooterJoinInterest")
-              .addEventListener("click", function () {
-                document.getElementById("myModal").style.display = "block";
-                document.getElementById("email").value = "";
-              });
+              .addEventListener("click", openModal);
           });
 
         // Close the modal when the user clicks on the close button
@@ -135,6 +146,7 @@
           .addEventListener("click", function () {
             document.getElementById("myModal").style.display = "none";
           });
+
         // Close the modal when the user clicks outside the modal
         window.addEventListener("click", function (event) {
           var modal = document.getElementById("myModal");
