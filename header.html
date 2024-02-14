@@ -16,25 +16,14 @@
     /* width: 90%;
     margin: auto; */
   }
-  .element-button {
-    display: inline-flex;
-    background-color: #121212;
-    font-weight: 500;
-    line-height: 16px;
-    border: 1px solid #1d1e20;
-    border-radius: 10px;
-    padding: 10px 12px 10px 12px;
-    color: #fff;
-    cursor: pointer;
-    text-decoration: none;
+  .element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
   }
-  .header-join-button {
+  .element-button {
     padding: 8px 16px;
-    background: linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0.2) 0%,
-      rgba(255, 255, 255, 0.2) 100%
-    );
     box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
     border-radius: 8px;
     overflow: hidden;
@@ -44,11 +33,29 @@
     gap: 8px;
     display: inline-flex;
     cursor: pointer;
-    color: white;
     font-size: 16px;
     font-weight: 700;
     line-height: 24px;
     word-wrap: break-word;
+    text-decoration: none;
+  }
+  .header-join-button {
+    background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 0.2) 100%
+    );
+    color: white;
+  }
+  .header-sign-button {
+    background: #fff;
+    color: #181818;
+  }
+  .divider {
+    width: 1px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0px 12px;
   }
 </style>
 <div class="container">
@@ -56,10 +63,16 @@
     <img src="/assets/logo.svg" alt="7thgear.ai" />
   </a>
   <div class="element">
-    <!-- <a class="element-button" href="/login/" target="_blank">Login</a> -->
-    <div id="btnHeaderJoinInterest" class="header-join-button">
+    <div id="btnHeaderJoinInterest" class="element-button header-join-button">
       Join Interest List
     </div>
-    <!-- <a class="element-button">Sign Up</a> -->
+    <div class="divider"></div>
+
+    <a class="element-button header-sign-button" href="/signIn/" target="_blank"
+      >Sign In</a
+    >
+    <a class="element-button header-sign-button" href="/signUp/" target="_blank"
+      >Sign Up</a
+    >
   </div>
 </div>
