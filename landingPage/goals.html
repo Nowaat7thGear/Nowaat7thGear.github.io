@@ -1,10 +1,13 @@
 <style>
   #goals-placeholder {
-    padding-top: 80px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
     gap: 40px;
-    display: inline-flex;
+    padding-top: 80px;
   }
   .goals-wrapper {
     width: 100%;
@@ -14,6 +17,7 @@
     align-items: center;
     gap: 40px;
     display: inline-flex;
+    flex-direction: row;
   }
   .goals-content {
     flex: 1 1 0;
@@ -23,7 +27,8 @@
     gap: 24px;
     display: inline-flex;
   }
-  .background-gradiant {
+  .goals-background-gradiant {
+    width: 100%;
     flex: 1 1 0;
     border-radius: 34px;
     position: relative;
@@ -37,6 +42,25 @@
     margin: 16px;
     margin-top: 24px;
   }
+  /* Media query for screens smaller than 768px (typical mobile screens) */
+  @media screen and (max-width: 767px) {
+    #goals-placeholder {
+      padding-top: 20px;
+    }
+    .goals-wrapper {
+      padding: 20px;
+      flex-direction: column !important;
+    }
+    .goals-content,
+    .background-gradiant {
+      flex: 0;
+    }
+    .goals-image {
+      width: 90%;
+      height: 90%;
+      margin-top: 16px;
+    }
+  }
 </style>
 <div class="goals-wrapper">
   <div class="goals-content">
@@ -46,7 +70,7 @@
       metrics that can be easily tracked and automatically reported.
     </div>
   </div>
-  <div class="background-gradiant">
+  <div class="goals-background-gradiant">
     <img class="goals-image" src="../assets/goals.png" />
   </div>
 </div>

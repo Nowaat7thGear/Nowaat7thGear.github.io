@@ -1,12 +1,16 @@
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
 html {
   height: 100vh;
-  width: 100vw;
+  padding: 0;
+  margin: 0;
 }
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   height: 100vh;
   background: #ffffff;
   padding: 0;
@@ -70,14 +74,14 @@ iframe {
 
 /* Terms of Service and Privacy Policy */
 .wrapper {
-  width: 90%;
   padding-top: 120px;
   flex: 1;
 }
-
 .header-container {
   display: flex;
   flex-direction: column;
+  padding-left: 80px;
+  padding-right: 80px;
 }
 .heading-title {
   font-size: 52px;
@@ -93,6 +97,8 @@ iframe {
 }
 .paragraph-section {
   padding-top: 40px;
+  padding-left: 80px;
+  padding-right: 80px;
 }
 .sub-header-title {
   font-size: 32px;
@@ -239,6 +245,22 @@ iframe {
   background: linear-gradient(103deg, #b902ca 12%, #32376f 100%);
   box-shadow: 0px 24px 40px -12px rgba(185, 2, 202, 0.4);
 }
+.join-interest-button {
+  width: 240px;
+  height: 64px;
+  border-radius: 8px;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  display: inline-flex;
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  word-wrap: break-word;
+}
 
 .primary-header {
   color: #181818;
@@ -253,4 +275,15 @@ iframe {
   font-weight: 500;
   line-height: 38.4px;
   word-wrap: break-word;
+}
+
+@media screen and (max-width: 767px) {
+  .primary-header {
+    font-size: 34px;
+    line-height: 42px;
+  }
+  .primary-font-size {
+    font-size: 18px;
+    line-height: 30.4px;
+  }
 }

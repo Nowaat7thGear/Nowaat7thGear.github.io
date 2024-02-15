@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>7thgear.ai</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
@@ -11,19 +12,20 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-
     <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="styles.module.css" />
   </head>
   <body>
-    <section id="header-placeholder"></section>
-    <section id="landing-placeholder"></section>
-    <section id="goals-placeholder"></section>
-    <section id="aiAssitance-placeholder"></section>
-    <section id="analytics-placeholder"></section>
-    <section id="feedback-placeholder"></section>
-    <section id="integration-placeholder"></section>
-    <section id="footer-placeholder"></section>
+    <div style="height: 100%">
+      <section id="header-placeholder"></section>
+      <section id="landing-placeholder"></section>
+      <section id="goals-placeholder"></section>
+      <section id="aiAssitance-placeholder"></section>
+      <section id="analytics-placeholder"></section>
+      <section id="feedback-placeholder"></section>
+      <section id="integration-placeholder"></section>
+      <section id="footer-placeholder"></section>
+    </div>
     <div id="myModal" class="modal">
       <form
         name="user_interested_form"
@@ -37,7 +39,7 @@
           <input
             type="email"
             id="email"
-            name="join-interest-email"
+            name="entry.245439686"
             placeholder="Enter your work email"
             maxlength="256"
             autocomplete="off"
@@ -85,6 +87,8 @@
 
         // Reset the submit button value
         submitBtn.value = "Submit";
+        emailFormSubmitted = false;
+        submitBtnEl.disabled = false;
       }
 
       document.addEventListener("DOMContentLoaded", function () {
@@ -92,6 +96,39 @@
           .then((response) => response.text())
           .then((html) => {
             document.getElementById("header-placeholder").innerHTML = html;
+
+            // const menuIcon = document.getElementById("menu-icon");
+            // const menu = document.getElementById("menu");
+            // const menuClose = document.getElementById("menu-close");
+
+            // menuIcon.addEventListener("click", function () {
+            //   menu.classList.toggle("show");
+            //   toggleMenuIcon();
+            // });
+            // menuClose.addEventListener("click", function () {
+            //   menu.classList.remove("show");
+            //   toggleMenuIcon();
+            // });
+
+            // function toggleMenuIcon() {
+            //   menuIcon.style.display = menu.classList.contains("show")
+            //     ? "none"
+            //     : "block";
+            //   menuClose.style.display = menu.classList.contains("show")
+            //     ? "block"
+            //     : "none";
+            // }
+
+            // Close menu when clicking outside
+            document.addEventListener("click", function (event) {
+              if (
+                !menu.contains(event.target) &&
+                !menuIcon.contains(event.target)
+              ) {
+                menu.classList.remove("show");
+              }
+            });
+
             document
               .getElementById("btnHeaderJoinInterest")
               .addEventListener("click", openModal);
@@ -166,7 +203,6 @@
               setTimeout(function () {
                 x.className = x.className.replace("show", "");
               }, 3000);
-              iframeEl.parentNode.removeChild(iframeEl); // iframe deletion is a workaround to bypass firefox bug
             }
           };
         }
