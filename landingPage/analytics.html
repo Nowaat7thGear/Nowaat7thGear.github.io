@@ -1,10 +1,12 @@
 <style>
   #analytics-placeholder {
-    padding-top: 80px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
     gap: 40px;
-    display: inline-flex;
   }
   .analytics-wrapper {
     width: 100%;
@@ -24,6 +26,7 @@
     display: inline-flex;
   }
   .analytics-background-gradiant {
+    width: 100%;
     flex: 1 1 0;
     border-radius: 34px;
     position: relative;
@@ -36,6 +39,22 @@
     display: inline-block;
     margin: 16px;
     margin-top: 24px;
+  }
+  /* Media query for screens smaller than 768px (typical mobile screens) */
+  @media screen and (max-width: 767px) {
+    .analytics-wrapper {
+      padding: 20px;
+      flex-direction: column !important;
+    }
+    .analytics-content,
+    .analytics-background-gradiant {
+      flex: 0;
+    }
+    .analytics-image {
+      width: 90%;
+      height: 90%;
+      margin-top: 16px;
+    }
   }
 </style>
 <div class="analytics-wrapper">

@@ -4,14 +4,14 @@
     background-image: url("../assets/footer-gradiant.png");
     background-size: cover;
     background-position: center;
-    padding: 80px;
     width: 100%;
   }
   .footer-wrapper {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     gap: 80px;
-    padding: 0px 80px;
+    padding: 80px 80px 20px 80px;
   }
   .footer-information {
     display: flex;
@@ -26,28 +26,13 @@
   .join-interest-text {
     color: white;
   }
-  .join-interest-button {
-    width: 240px;
-    height: 64px;
-    border-radius: 8px;
-    overflow: hidden;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    display: inline-flex;
-    cursor: pointer;
-    color: white;
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 24px;
-    word-wrap: break-word;
-  }
   .footer-meta {
     padding-top: 32px;
     border-top: 1px #eaecf0 solid;
     justify-content: space-between;
     align-items: center;
     display: inline-flex;
+    flex-wrap: wrap;
   }
   .footer-copyright {
     color: #667085;
@@ -71,6 +56,25 @@
     align-items: center;
     gap: 24px;
     display: flex;
+  }
+  /* Media query for screens smaller than 768px (typical mobile screens) */
+  @media screen and (max-width: 767px) {
+    .footer-wrapper {
+      padding: 20px 20px 10px 20px;
+    }
+    .footer-meta {
+      padding-top: 20px;
+    }
+    .footer-copyright {
+      width: 100%;
+      text-align: center;
+    }
+    .footer-icons {
+      width: 100%;
+      justify-content: space-evenly;
+      gap: 4px;
+      margin-top: 10px;
+    }
   }
 </style>
 <div class="footer-wrapper">

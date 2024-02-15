@@ -1,11 +1,12 @@
 <style>
   #integration-placeholder {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
     gap: 40px;
-    display: inline-flex;
-    padding: 80px;
-    box-sizing: border-box;
   }
   .integration-wrapper {
     display: inline-flex;
@@ -20,6 +21,8 @@
     align-items: center;
     gap: 16px;
     display: flex;
+    padding-left: 80px;
+    padding-right: 80px;
   }
   .integration-content-header {
     text-align: center;
@@ -34,11 +37,11 @@
   }
   .integration-icons-wrapper {
     align-self: stretch;
-    padding-left: 80px;
-    padding-right: 80px;
+    padding: 0px 80px 80px 80px;
     justify-content: space-between;
     align-items: center;
     display: inline-flex;
+    flex-wrap: wrap;
   }
   .integration-icon-background {
     width: 64px;
@@ -47,6 +50,16 @@
     justify-content: center;
     align-items: center;
     border-radius: 8px;
+  }
+  /* Media query for screens smaller than 768px (typical mobile screens) */
+  @media screen and (max-width: 767px) {
+    .integration-content {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .integration-icons-wrapper {
+      padding: 20px;
+    }
   }
 </style>
 <div class="integration-wrapper">
