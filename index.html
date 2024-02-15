@@ -87,6 +87,7 @@
 
         // Reset the submit button value
         submitBtn.value = "Submit";
+        emailFormSubmitted = false;
         submitBtnEl.disabled = false;
       }
 
@@ -202,7 +203,6 @@
               setTimeout(function () {
                 x.className = x.className.replace("show", "");
               }, 3000);
-              iframeEl.parentNode.removeChild(iframeEl); // iframe deletion is a workaround to bypass firefox bug
             }
           };
         }
