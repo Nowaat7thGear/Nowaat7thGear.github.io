@@ -96,7 +96,9 @@
           .then((response) => response.text())
           .then((html) => {
             document.getElementById("header-placeholder").innerHTML = html;
-
+            document
+              .getElementById("btnHeaderJoinInterest")
+              .addEventListener("click", openModal);
             // const menuIcon = document.getElementById("menu-icon");
             // const menu = document.getElementById("menu");
             // const menuClose = document.getElementById("menu-close");
@@ -120,18 +122,14 @@
             // }
 
             // Close menu when clicking outside
-            document.addEventListener("click", function (event) {
-              if (
-                !menu.contains(event.target) &&
-                !menuIcon.contains(event.target)
-              ) {
-                menu.classList.remove("show");
-              }
-            });
-
-            document
-              .getElementById("btnHeaderJoinInterest")
-              .addEventListener("click", openModal);
+            // document.addEventListener("click", function (event) {
+            //   if (
+            //     !menu.contains(event.target) &&
+            //     !menuIcon.contains(event.target)
+            //   ) {
+            //     menu.classList.remove("show");
+            //   }
+            // });
           });
         fetch("/landingPage/index.html")
           .then((response) => response.text())
