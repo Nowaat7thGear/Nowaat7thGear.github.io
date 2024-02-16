@@ -14,6 +14,7 @@
     />
     <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="styles.module.css" />
+    <script type="text/javascript" src="./common/utils.js"></script>
   </head>
   <body>
     <div style="height: 100%">
@@ -99,37 +100,7 @@
             document
               .getElementById("btnHeaderJoinInterest")
               .addEventListener("click", openModal);
-            // const menuIcon = document.getElementById("menu-icon");
-            // const menu = document.getElementById("menu");
-            // const menuClose = document.getElementById("menu-close");
-
-            // menuIcon.addEventListener("click", function () {
-            //   menu.classList.toggle("show");
-            //   toggleMenuIcon();
-            // });
-            // menuClose.addEventListener("click", function () {
-            //   menu.classList.remove("show");
-            //   toggleMenuIcon();
-            // });
-
-            // function toggleMenuIcon() {
-            //   menuIcon.style.display = menu.classList.contains("show")
-            //     ? "none"
-            //     : "block";
-            //   menuClose.style.display = menu.classList.contains("show")
-            //     ? "block"
-            //     : "none";
-            // }
-
-            // Close menu when clicking outside
-            // document.addEventListener("click", function (event) {
-            //   if (
-            //     !menu.contains(event.target) &&
-            //     !menuIcon.contains(event.target)
-            //   ) {
-            //     menu.classList.remove("show");
-            //   }
-            // });
+            loadModalEventHandlers();
           });
         fetch("/landingPage/index.html")
           .then((response) => response.text())
