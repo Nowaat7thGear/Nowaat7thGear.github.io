@@ -42,6 +42,10 @@
   }
   /* Media query for screens smaller than 768px (typical mobile screens) */
   @media screen and (max-width: 767px) {
+    #feedback-placeholder {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
     .feedback-wrapper {
       padding: 20px;
       flex-direction: column !important;
@@ -49,6 +53,9 @@
     .feedback-content,
     .feedback-background-gradiant {
       flex: 0;
+    }
+    .feedback-content {
+      order: -1;
     }
     .feedback-image {
       width: 90%;

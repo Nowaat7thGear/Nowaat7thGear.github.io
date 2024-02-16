@@ -286,4 +286,19 @@ iframe {
     font-size: 18px;
     line-height: 30.4px;
   }
+  .wrapper {
+    padding-top: 140px;
+  }
+  .header-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .paragraph-section {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  #myModal {
+    width: 90%;
+  }
 }

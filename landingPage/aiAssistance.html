@@ -42,6 +42,10 @@
   }
   /* Media query for screens smaller than 768px (typical mobile screens) */
   @media screen and (max-width: 767px) {
+    #aiAssitance-placeholder {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
     .assitance-wrapper {
       padding: 20px;
       flex-direction: column !important;
@@ -49,6 +53,9 @@
     .assitance-content,
     .assitance-background-gradiant {
       flex: 0;
+    }
+    .assitance-content {
+      order: -1;
     }
     .assitance-image {
       width: 90%;
