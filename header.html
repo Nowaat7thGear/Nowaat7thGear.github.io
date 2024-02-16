@@ -65,7 +65,7 @@
     flex-direction: column;
     width: 100%;
     position: absolute;
-    top: 100%;
+    top: 60px;
     left: 0;
     background: #4b4a4a;
     padding: 20px;
@@ -75,19 +75,6 @@
     transition: opacity 0.3s ease, transform 0.3s ease;
     opacity: 0;
     z-index: 999;
-  }
-  #menu-close {
-    display: none;
-    background-color: #4b4a4a;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    width: 34px;
-    height: 35px;
-    align-self: center;
-    font-size: 24px;
-    text-align: center;
-    position: relative;
   }
   /* Media query for screens smaller than 768px (typical mobile screens) */
   @media screen and (max-width: 767px) {
@@ -118,6 +105,19 @@
       height: 5px;
       background-color: white;
       margin: 6px 0;
+      transition: 0.4s;
+    }
+
+    .change .bar1 {
+      transform: translate(0, 11px) rotate(-45deg);
+    }
+
+    .change .bar2 {
+      opacity: 0;
+    }
+
+    .change .bar3 {
+      transform: translate(0, -11px) rotate(45deg);
     }
   }
 </style>
@@ -127,11 +127,10 @@
   </a>
   <div class="mobile-version">
     <div id="menu-icon" class="menu-icon">
-      <div></div>
-      <div></div>
-      <div></div>
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
     </div>
-    <button id="menu-close"><span>&times;</span></button>
   </div>
   <div id="menu" class="menu">
     <a id="menuItemHeaderJoinInterest" class="menu-item">

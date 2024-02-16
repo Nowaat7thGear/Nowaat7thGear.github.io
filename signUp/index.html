@@ -2,6 +2,16 @@
 <html>
   <head>
     <title>7thgear.ai</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="/styles.module.css" />
     <style>
@@ -58,6 +68,23 @@
         font-size: 14px;
         font-weight: 400;
         line-height: 20px;
+      }
+      /* Media query for screens smaller than 768px (typical mobile screens) */
+      @media screen and (max-width: 767px) {
+        .signup-container {
+          height: 100%;
+          display: flex;
+          align-items: flex-start;
+          flex-direction: column;
+        }
+        .signup-container .brand-logo img {
+          width: 150px;
+        }
+        #login-container {
+          width: 100%;
+          padding-left: 40px;
+          padding-right: 40px;
+        }
       }
     </style>
   </head>
