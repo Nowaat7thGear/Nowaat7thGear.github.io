@@ -302,3 +302,82 @@ iframe {
     width: 90%;
   }
 }
+
+/* SignIn and SignUp Style */
+.auth-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.auth-parent-container {
+  padding: 64px;
+  height: 100%;
+}
+.auth-brand-logo {
+  width: 175px;
+}
+#auth-container {
+  width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.auth-widget-wrap {
+  width: 100%;
+}
+.auth-widget {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+.auth-header {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  width: 100%;
+}
+.auth-google {
+  width: 100%;
+}
+.auth-link {
+  color: #397e7f;
+  text-decoration: underline;
+}
+#account-exists-container {
+  margin-top: 24px;
+}
+.account-exists-text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+#terms-privacy-container {
+  margin-top: 80px;
+}
+.terms-privacy-text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .auth-parent-container {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 40px;
+  }
+  .auth-parent-container .auth-brand-logo img {
+    width: 150px;
+  }
+  #auth-container {
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  #terms-privacy-container {
+    margin-top: 60px;
+  }
+}
+/* SignIn and SignUp Style */

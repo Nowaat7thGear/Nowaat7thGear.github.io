@@ -14,109 +14,36 @@
     />
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="/styles.module.css" />
-    <style>
-      .brand-logo {
-        width: 175px;
-      }
-      #login-container {
-        width: 420px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .login-widget-wrap {
-        width: 100%;
-      }
-      .login-widget {
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-        align-items: center;
-      }
-      .login-header {
-        font-size: 32px;
-        font-weight: 700;
-        line-height: 40px;
-        width: 100%;
-      }
-      #google-sign-up-placeholder {
-        width: 100%;
-      }
-      #account-exists-container {
-        margin-top: 24px;
-        width: 420px;
-      }
-      .account-exists-text {
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 24px;
-      }
-      .signup-link {
-        color: #397e7f;
-        text-decoration: underline;
-      }
-      .signup-wrapper {
-        position: relative;
-        width: 100%;
-      }
-      .signup-container {
-        padding: 64px;
-      }
-      #terms-privacy-container {
-        margin-top: 80px;
-      }
-      .terms-privacy-text {
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 20px;
-      }
-      /* Media query for screens smaller than 768px (typical mobile screens) */
-      @media screen and (max-width: 767px) {
-        .signup-container {
-          height: 100%;
-          display: flex;
-          align-items: flex-start;
-          flex-direction: column;
-        }
-        .signup-container .brand-logo img {
-          width: 150px;
-        }
-        #login-container {
-          width: 100%;
-          padding-left: 40px;
-          padding-right: 40px;
-        }
-      }
-    </style>
   </head>
   <body>
-    <div class="signup-wrapper">
-      <div class="signup-container">
+    <div class="auth-wrapper">
+      <div class="auth-parent-container">
         <div class="signup-header">
-          <a href="/" class="brand-logo">
+          <a href="/" class="auth-brand-logo">
             <img src="/assets/7th-gear.svg" alt="7thgear.ai" />
           </a>
         </div>
-        <div id="login-container">
-          <div class="login-widget-wrap">
-            <div class="login-widget">
-              <h3 class="login-header">Sign up</h3>
-              <div id="google-sign-up-placeholder"></div>
+        <div id="auth-container">
+          <div class="auth-widget-wrap">
+            <div class="auth-widget">
+              <h3 class="auth-header">Sign up</h3>
+              <div id="google-sign-up-placeholder" class="auth-google"></div>
             </div>
           </div>
           <div id="account-exists-container">
             <div class="account-exists-text">
               Already have an account?
-              <a class="signup-link" href="/signIn/" target="_blank">Log in</a>
+              <a class="auth-link" href="/signIn/" target="_blank">Log in</a>
             </div>
           </div>
           <div id="terms-privacy-container">
             <div class="terms-privacy-text">
               By signing up, you agree to 7th Gear's
-              <a class="signup-link" href="/terms-of-service/" target="_blank"
+              <a class="auth-link" href="/terms-of-service/" target="_blank"
                 >Terms of Service</a
               >
               and
-              <a class="signup-link" href="/privacy-policy/" target="_blank"
+              <a class="auth-link" href="/privacy-policy/" target="_blank"
                 >Privacy Policy</a
               >.
             </div>
