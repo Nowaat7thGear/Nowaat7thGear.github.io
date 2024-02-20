@@ -105,7 +105,9 @@ iframe {
   font-weight: 600;
   line-height: 38px;
   padding: 0;
+  padding-bottom: 8px;
   margin: 0;
+  margin-bottom: 8px;
 }
 .content {
   font-size: 18px;
