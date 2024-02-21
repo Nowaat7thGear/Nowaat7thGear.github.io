@@ -114,21 +114,33 @@
           .then((response) => response.text())
           .then((html) => {
             document.getElementById("goals-placeholder").innerHTML = html;
+            document
+              .getElementById("btnGoalInterest")
+              .addEventListener("click", openModal);
           });
         fetch("/landingPage/aiAssistance.html")
           .then((response) => response.text())
           .then((html) => {
             document.getElementById("aiAssitance-placeholder").innerHTML = html;
+            document
+              .getElementById("btnAiAsstistanceInterest")
+              .addEventListener("click", openModal);
           });
         fetch("/landingPage/analytics.html")
           .then((response) => response.text())
           .then((html) => {
             document.getElementById("analytics-placeholder").innerHTML = html;
+            document
+              .getElementById("btnAnalyticsInterest")
+              .addEventListener("click", openModal);
           });
         fetch("/landingPage/feedback.html")
           .then((response) => response.text())
           .then((html) => {
             document.getElementById("feedback-placeholder").innerHTML = html;
+            document
+              .getElementById("btnFeedbackInterest")
+              .addEventListener("click", openModal);
           });
         fetch("/landingPage/integration.html")
           .then((response) => response.text())
