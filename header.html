@@ -38,16 +38,25 @@
     text-decoration: none;
   }
   .header-join-button {
-    background: linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0.2) 0%,
-      rgba(255, 255, 255, 0.2) 100%
-    );
+    padding: 8px 16px;
+    border-radius: 8px;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    display: inline-flex;
+    cursor: pointer;
     color: white;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    word-wrap: break-word;
+    text-decoration: none;
   }
   .header-sign-button {
     background: #fff;
     color: #181818;
+    min-width: 100px;
   }
   .divider {
     width: 1px;
@@ -140,7 +149,7 @@
     <a href="/signUp/" class="menu-item" target="_blank">Sign Up</a>
   </div>
   <div class="element">
-    <div id="btnHeaderJoinInterest" class="element-button header-join-button">
+    <div id="btnHeaderJoinInterest" class="primary-button header-join-button">
       Join Interest List
     </div>
     <div class="divider"></div>
