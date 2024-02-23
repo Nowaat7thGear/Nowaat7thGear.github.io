@@ -37,3 +37,21 @@ function loadModalEventHandlers() {
     }
   });
 }
+
+function readAuthQueryParams() {
+  // Get the query string from the URL
+  const queryString = window.location.search;
+
+  // Create a URLSearchParams object from the query string
+  const urlParams = new URLSearchParams(queryString);
+
+  // Check if there are any query parameters in the URL
+  if (urlParams.toString()) {
+    const paramValue = urlParams.get("action-item");
+    // Append the new query parameter "action-item" with the value "true" to the href attribute
+    if (paramValue === "true")
+      document.getElementById(
+        "btnSignInWithGoogle"
+      ).href = `https://app.7thgear.ai/google?action-item=true`;
+  }
+}
