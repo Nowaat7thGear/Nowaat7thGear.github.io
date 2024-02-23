@@ -42,10 +42,9 @@ function readAuthQueryParams() {
   // Get the query string from the URL
   const queryString = window.location.search;
 
-  console.log("queryString", queryString)
   // Create a URLSearchParams object from the query string
   const urlParams = new URLSearchParams(queryString);
-  console.log("urlParams", urlParams.toString())
+
   // Check if there are any query parameters in the URL
   if (urlParams.toString()) {
     const paramValue = urlParams.get("action-item");
