@@ -42,16 +42,11 @@ function readAuthQueryParams() {
   // Get the query string from the URL
   const queryString = window.location.search;
 
-  // Create a URLSearchParams object from the query string
-  const urlParams = new URLSearchParams(queryString);
+  // Get the query string from the URL
+  const hashString = window.location.hash;
 
-  // Check if there are any query parameters in the URL
-  if (urlParams.toString()) {
-    const paramValue = urlParams.get("showActionItems");
-    // Append the new query parameter "action-item" with the value "true" to the href attribute
-    if (paramValue === "true")
-      document.getElementById(
-        "btnSignInWithGoogle"
-      ).href = `https://app.7thgear.ai/google?showActionItems=true`;
-  }
+  document.getElementById(
+    "btnSignInWithGoogle"
+  ).href = `https://app.7thgear.ai/google${queryString}${hashString}`;
+
 }
