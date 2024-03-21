@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>7thgear.ai</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/styles.module.css" />
+    <script type="text/javascript" src="/common/utils.js"></script>
+  </head>
+  <body>
+    <div style="height: 100%">
+      <section id="header-placeholder"></section>
+      <section class="wrapper">
+        <div class="header-container">
+          <h2 class="heading-title">Contact Us</h2>
+        </div>
+        <section class="paragraph-section">
+          <form
+            id="contact_us_form"
+            name="contact_us_form"
+            target="contant_us_response_iframe"
+            action="https://docs.google.com/forms/d/e/1FAIpQLScQkg7RQ-D6UeGUd-FIjy8AaWebFAeD9IXLi79YxuyHrzAZdQ/formResponse"
+          >
+            <div class="form-group">
+              <label for="name"
+                >Your Name: <span class="required">*</span></label
+              >
+              <input
+                type="text"
+                id="contact_us_name"
+                name="entry.1934631353"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="email"
+                >Email Address: <span class="required">*</span></label
+              >
+              <input
+                type="email"
+                id="contact_us_email"
+                name="entry.758552959"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="query"
+                >Write your query: <span class="required">*</span></label
+              >
+              <textarea
+                id="contact_us_query"
+                name="entry.655734879"
+                rows="4"
+                required
+              ></textarea>
+            </div>
+            <input
+              type="submit"
+              id="contact_us_submit"
+              value="Submit"
+              class="primary-button"
+            />
+          </form>
+        </section>
+      </section>
+      <div id="footer-placeholder"></div>
+    </div>
+    <div id="myModal" class="modal">
+      <form
+        name="user_interested_form"
+        id="email_form"
+        target="response_iframe"
+        action="https://docs.google.com/forms/d/e/1FAIpQLSenyJoQ2hQkkBGfj2C5HQ0dFJNep7sbEBVh_ENjFHKwzAHHGw/formResponse"
+        style="display: block"
+      >
+        <div class="modal-content">
+          <button id="closeBtn" class="close"><span>&times;</span></button>
+          <input
+            type="email"
+            id="email"
+            name="entry.245439686"
+            placeholder="Enter your work email"
+            maxlength="256"
+            autocomplete="off"
+            required
+          />
+          <input
+            type="submit"
+            id="submit"
+            value="Submit"
+            class="primary-button"
+          />
+        </div>
+      </form>
+    </div>
+    <div id="snackbar">
+      Thanks for showing interest in making employee growth a priority. We will
+      reach out to you shortly.
+    </div>
+    <iframe id="response_iframe" name="response_iframe"></iframe>
+    <div id="contact_us_snackbar">
+      Your query has be sent on support email. We will react out to you shortly.
+    </div>
+    <iframe
+      id="contant_us_response_iframe"
+      name="contant_us_response_iframe"
+    ></iframe>
+    <script type="text/javascript">
+      var emailFormEl = document.getElementById("email_form");
+      var submitBtnEl = document.getElementById("submit");
+      var iframeEl = document.getElementById("response_iframe");
+      var emailFormSubmitted = false; // Flag to track form submission
+
+      var contantUsEmailFormEl = document.getElementById("contact_us_form");
+      console.log("contantUsEmailFormEl", contantUsEmailFormEl);
+      var contantUsSubmitBtnEl = document.getElementById("contact_us_submit");
+      var contactUsIframeEl = document.getElementById(
+        "contant_us_response_iframe"
+      );
+      var contactUsFormSubmitted = false;
+
+      // set the target on the form to point to a hidden iframe
+      // some browsers need the target set via JavaScript, no idea why...
+      emailFormEl.target = "response_iframe";
+      emailFormEl.addEventListener("submit", function () {
+        emailFormSubmitted = true; // Set flag to true when form is submitted
+        submitBtnEl.disabled = true;
+        submitBtnEl.value = "Requesting...";
+      });
+
+      contantUsEmailFormEl.addEventListener("submit", function () {
+        debugger;
+        contactUsFormSubmitted = true; // Set flag to true when form is submitted
+        contantUsSubmitBtnEl.disabled = true;
+      });
+
+      function openModal() {
+        var modal = document.getElementById("myModal");
+        var emailInput = document.getElementById("email");
+        var submitBtn = document.getElementById("submit");
+
+        // Display the modal
+        modal.style.display = "block";
+
+        // Clear the email input field
+        emailInput.value = "";
+
+        // Reset the submit button value
+        submitBtn.value = "Submit";
+        emailFormSubmitted = false;
+        submitBtnEl.disabled = false;
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("/header.html")
+          .then((response) => response.text())
+          .then((html) => {
+            document.getElementById("header-placeholder").innerHTML = html;
+            document
+              .getElementById("btnHeaderJoinInterest")
+              .addEventListener("click", openModal);
+            loadModalEventHandlers();
+          });
+        fetch("/footer.html")
+          .then((response) => response.text())
+          .then((html) => {
+            document.getElementById("footer-placeholder").innerHTML = html;
+            var currentYear = new Date().getFullYear();
+            document.getElementById("copyright_year").innerText = currentYear;
+            document
+              .getElementById("btnFooterJoinInterest")
+              .addEventListener("click", openModal);
+          });
+        // Close the modal when the user clicks on the close button
+        document
+          .getElementsByClassName("close")[0]
+          .addEventListener("click", function () {
+            document.getElementById("myModal").style.display = "none";
+          });
+
+        // Close the modal when the user clicks outside the modal
+        window.addEventListener("click", function (event) {
+          var modal = document.getElementById("myModal");
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        });
+
+        // detect when the iframe reloads
+        if (iframeEl) {
+          iframeEl.onload = function () {
+            if (emailFormSubmitted) {
+              // now you can do stuff, such as displaying a message or redirecting to a new page.
+              document.getElementById("myModal").style.display = "none";
+              var x = document.getElementById("snackbar");
+              x.className = "show";
+              setTimeout(function () {
+                x.className = x.className.replace("show", "");
+              }, 3000);
+            }
+          };
+        }
+
+        if (contactUsIframeEl) {
+          contactUsIframeEl.onload = function () {
+            debugger;
+            if (contactUsFormSubmitted) {
+              // now you can do stuff, such as displaying a message or redirecting to a new page.
+              var x = document.getElementById("contact_us_snackbar");
+              x.className = "show";
+              setTimeout(function () {
+                x.className = x.className.replace("show", "");
+              }, 3000);
+              const fieldName = document.getElementById("contact_us_name");
+              const fieldEmail = document.getElementById("contact_us_email");
+              const fieldQuery = document.getElementById("contact_us_query");
+              fieldName.value = "";
+              fieldEmail.value = "";
+              fieldQuery.value = "";
+              contantUsSubmitBtnEl.disabled = false;
+            }
+          };
+        }
+      });
+    </script>
+  </body>
+</html>
