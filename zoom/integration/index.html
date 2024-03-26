@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>7thgear.ai</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/styles.module.css" />
+    <script type="text/javascript" src="/common/utils.js"></script>
+  </head>
+  <body>
+    <div style="height: 100%">
+      <section id="header-placeholder"></section>
+      <section class="wrapper">
+        <div class="header-container">
+          <h2 class="heading-title">Zoom integration overview</h2>
+          <p class="updated-date">Last updated: Mar 26, 2024</p>
+        </div>
+        <section class="paragraph-section">
+          <div class="content">
+            7thGear.ai helps employees, managers and leaders to intergrate their
+            calendars and track time spent on various activities. We integrate
+            different enterprise applications and provide a unified operating
+            system to help front line staff become more effective in their day
+            to day operations.
+            <!-- 7thGear.ai is an application focussed on People Performance and Resource Management -->
+          </div>
+        </section>
+        <section class="paragraph-section">
+          <h2>Adding and removing the app</h2>
+          To add the app, your org must be set up for 7th Gear app and the 7th
+          Gear app for Zoom must be pre-approved by your tech admin at your
+          org's Zoom account level.
+          <section class="section">
+            <h3>To add:</h3>
+            <ul>
+              <li>Open 7thgear.ai, and Sign in.</li>
+              <li>Click Integrations, and select Zoom.</li>
+              <li>Add the 7th Gear for Zoom.</li>
+            </ul>
+            <div>
+              <img src="../../assets/zoom/consent-screen.png" width="100%" height="600px" alt="7th Gear Consent Screen">
+              <img src="../../assets/zoom/zoom-consent-screen.png" width="100%" height="600px" alt="Zoom Consent Screen">
+              <img src="../../assets/zoom/successful-integration.png" width="100%" height="600px" alt="Successful Consent Screen">
+            </div>
+          </section>
+          <section class="section">
+            <h3>To remove:</h3>
+            <ul>
+              <li>
+                In your browser, sign in 7thgear.ai and go to the Integrations.
+              </li>
+              <li>
+                Click on Delete, your app will be removed and data will be
+                deleted from the platform.
+              </li>
+            </ul>
+              <img src="../../assets/zoom/zoom-delete.png" width="100%" height="600px" alt="Successful Consent Screen">
+          </section>
+        </section>
+      </section>
+        <div id="myModal" class="modal">
+      <form
+        name="user_interested_form"
+        id="email_form"
+        target="response_iframe"
+        action="https://docs.google.com/forms/d/e/1FAIpQLSenyJoQ2hQkkBGfj2C5HQ0dFJNep7sbEBVh_ENjFHKwzAHHGw/formResponse"
+        style="display: block"
+      >
+        <div class="modal-content">
+          <button id="closeBtn" class="close"><span>&times;</span></button>
+          <input
+            type="email"
+            id="email"
+            name="entry.245439686"
+            placeholder="Enter your work email"
+            maxlength="256"
+            autocomplete="off"
+            required
+          />
+          <input
+            type="submit"
+            id="submit"
+            value="Submit"
+            class="primary-button"
+          />
+        </div>
+      </form>
+    </div>
+    <div id="snackbar">
+      Thanks for showing interest in making employee growth a priority. We will
+      reach out to you shortly.
+    </div>
+    <iframe id="response_iframe" name="response_iframe"></iframe>
+    <script type="text/javascript">
+      var emailFormEl = document.getElementById("email_form");
+      var submitBtnEl = document.getElementById("submit");
+      var iframeEl = document.getElementById("response_iframe");
+      var emailFormSubmitted = false; // Flag to track form submission
+
+      // set the target on the form to point to a hidden iframe
+      // some browsers need the target set via JavaScript, no idea why...
+      emailFormEl.target = "response_iframe";
+      emailFormEl.addEventListener("submit", function () {
+        emailFormSubmitted = true; // Set flag to true when form is submitted
+        submitBtnEl.disabled = true;
+        submitBtnEl.value = "Requesting...";
+      });
+
+      function openModal() {
+        var modal = document.getElementById("myModal");
+        var emailInput = document.getElementById("email");
+        var submitBtn = document.getElementById("submit");
+
+        // Display the modal
+        modal.style.display = "block";
+
+        // Clear the email input field
+        emailInput.value = "";
+
+        // Reset the submit button value
+        submitBtn.value = "Submit";
+        emailFormSubmitted = false;
+        submitBtnEl.disabled = false;
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("/header.html")
+          .then((response) => response.text())
+          .then((html) => {
+            document.getElementById("header-placeholder").innerHTML = html;
+            document
+              .getElementById("btnHeaderJoinInterest")
+              .addEventListener("click", openModal);
+            loadModalEventHandlers();
+          });
+        fetch("/footer.html")
+          .then((response) => response.text())
+          .then((html) => {
+            document.getElementById("footer-placeholder").innerHTML = html;
+            var currentYear = new Date().getFullYear();
+            document.getElementById("copyright_year").innerText = currentYear;
+            document
+              .getElementById("btnFooterJoinInterest")
+              .addEventListener("click", openModal);
+          });
+        // Close the modal when the user clicks on the close button
+        document
+          .getElementsByClassName("close")[0]
+          .addEventListener("click", function () {
+            document.getElementById("myModal").style.display = "none";
+          });
+
+        // Close the modal when the user clicks outside the modal
+        window.addEventListener("click", function (event) {
+          var modal = document.getElementById("myModal");
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        });
+
+        // detect when the iframe reloads
+        if (iframeEl) {
+          iframeEl.onload = function () {
+            if (emailFormSubmitted) {
+              // now you can do stuff, such as displaying a message or redirecting to a new page.
+              document.getElementById("myModal").style.display = "none";
+              var x = document.getElementById("snackbar");
+              x.className = "show";
+              setTimeout(function () {
+                x.className = x.className.replace("show", "");
+              }, 3000);
+            }
+          };
+        }
+      });
+    </script>
+  </body>
+    </div>
+  </body>
+</html>
