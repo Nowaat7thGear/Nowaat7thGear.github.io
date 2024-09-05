@@ -1,11 +1,12 @@
 <style>
   #footer-placeholder {
     position: relative;
-    background-image: url("../assets/footer-gradiant.png");
+    background-image: url("./assets/footer-gradiant.png");
     background-size: cover;
     background-position: center;
     width: 100%;
   }
+
   .footer-wrapper {
     display: flex;
     flex-direction: column;
@@ -13,19 +14,23 @@
     gap: 80px;
     padding: 80px 80px 20px 80px;
   }
+
   .footer-information {
     display: flex;
     flex-direction: column;
     gap: 40px;
   }
+
   .join-interest {
     display: flex;
     flex-direction: column;
     gap: 16px;
   }
+
   .join-interest-text {
     color: white;
   }
+
   .footer-meta {
     padding-top: 32px;
     border-top: 1px #eaecf0 solid;
@@ -34,6 +39,7 @@
     display: inline-flex;
     flex-wrap: wrap;
   }
+
   .footer-copyright {
     color: #667085;
     font-size: 16px;
@@ -42,6 +48,7 @@
     line-height: 24px;
     word-wrap: break-word;
   }
+
   .terms-privacy {
     color: #fff;
     font-size: 16px;
@@ -51,24 +58,29 @@
     word-wrap: break-word;
     text-decoration: none;
   }
+
   .footer-icons {
     justify-content: flex-start;
     align-items: center;
     gap: 24px;
     display: flex;
   }
+
   /* Media query for screens smaller than 768px (typical mobile screens) */
   @media screen and (max-width: 767px) {
     .footer-wrapper {
       padding: 20px 20px 10px 20px;
     }
+
     .footer-meta {
       padding-top: 20px;
     }
+
     .footer-copyright {
       width: 100%;
       text-align: center;
     }
+
     .footer-icons {
       width: 100%;
       justify-content: space-evenly;
@@ -84,10 +96,7 @@
       <div class="primary-header join-interest-text">
         Get ready to accelerate your growth at the highest gear !!
       </div>
-      <div
-        id="btnFooterJoinInterest"
-        class="primary-button join-interest-button"
-      >
+      <div id="btnFooterJoinInterest" class="primary-button join-interest-button">
         Join Interest List
       </div>
     </div>
@@ -97,9 +106,7 @@
       © <span id="copyright_year"></span> 7th Gear. All rights reserved.
     </div>
     <div class="footer-icons">
-      <a class="terms-privacy" href="/contact-us/" target="_blank"
-        >Contact Us</a
-      >
+      <a class="terms-privacy" href="/contact-us/" target="_blank">Contact Us</a>
       <a class="terms-privacy" href="/terms-of-service/">Terms of Service</a>
       <a class="terms-privacy" href="/privacy-policy/">Privacy Policy</a>
       <!-- <img src="/assets/footer-twitter.svg" alt="Twitter" />

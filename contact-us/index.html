@@ -13,8 +13,8 @@
       rel="stylesheet"
     />
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="/styles.module.css" />
-    <script type="text/javascript" src="/common/utils.js"></script>
+    <link rel="stylesheet" href="../styles.module.css" />
+    <script type="text/javascript" src="../common/utils.js"></script>
   </head>
   <body>
     <div style="height: 100%">
@@ -161,7 +161,7 @@
       }
 
       document.addEventListener("DOMContentLoaded", function () {
-        fetch("/header.html")
+        fetch("../header.html")
           .then((response) => response.text())
           .then((html) => {
             document.getElementById("header-placeholder").innerHTML = html;
@@ -170,7 +170,7 @@
               .addEventListener("click", openModal);
             loadModalEventHandlers();
           });
-        fetch("/footer.html")
+        fetch("../footer.html")
           .then((response) => response.text())
           .then((html) => {
             document.getElementById("footer-placeholder").innerHTML = html;

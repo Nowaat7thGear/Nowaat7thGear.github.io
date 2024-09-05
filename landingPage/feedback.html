@@ -8,6 +8,7 @@
     align-items: center;
     gap: 40px;
   }
+
   .feedback-wrapper {
     width: 100%;
     height: 100%;
@@ -17,6 +18,7 @@
     gap: 40px;
     display: inline-flex;
   }
+
   .feedback-content {
     flex: 1 1 0;
     flex-direction: column;
@@ -25,38 +27,45 @@
     gap: 24px;
     display: inline-flex;
   }
+
   .feedback-background-gradiant {
     width: 100%;
     flex: 1 1 0;
     border-radius: 34px;
     position: relative;
-    background-image: url("../assets/feedback-gradiant.png");
+    background-image: url("./assets/feedback-gradiant.png");
     background-size: cover;
     background-position: center;
     text-align: center;
   }
+
   .feedback-image {
     display: inline-block;
     margin: 16px;
     margin-top: 24px;
   }
+
   /* Media query for screens smaller than 768px (typical mobile screens) */
   @media screen and (max-width: 767px) {
     #feedback-placeholder {
       padding-top: 20px;
       padding-bottom: 20px;
     }
+
     .feedback-wrapper {
       padding: 20px;
       flex-direction: column !important;
     }
+
     .feedback-content,
     .feedback-background-gradiant {
       flex: 0;
     }
+
     .feedback-content {
       order: -1;
     }
+
     .feedback-image {
       width: 90%;
       height: 90%;
@@ -66,7 +75,7 @@
 </style>
 <div class="feedback-wrapper">
   <div class="feedback-background-gradiant">
-    <img class="feedback-image" src="../assets/feedback.png" />
+    <img class="feedback-image" src="./assets/feedback.png" />
   </div>
   <div class="feedback-content">
     <div class="primary-header">Seamless and Personalized feedback</div>

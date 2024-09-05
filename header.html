@@ -5,7 +5,7 @@
     top: 0;
     padding: 20px 0px 20px 0px;
     z-index: 9999;
-    background: rgba(20.11, 20.11, 20.11, 0.4);
+    background: #FFFFFF;
     backdrop-filter: blur(16px);
   }
   .app-header-container {
@@ -18,26 +18,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8px;
+    gap: 16px;
   }
   .element-button {
-    padding: 8px 16px;
-    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
-    border-radius: 8px;
+    padding: 8px 24px;
+/* background: linear-gradient(262deg, #BD00CD -0.34%, #32376F 99.66%);   */
+  border-radius: 8px;
     overflow: hidden;
-    border: 1px rgba(255, 255, 255, 0.6) solid;
     justify-content: center;
     align-items: center;
     gap: 8px;
     display: inline-flex;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
     line-height: 24px;
     word-wrap: break-word;
     text-decoration: none;
   }
-  .header-join-button {
+  /* .header-join-button {
     padding: 8px 16px;
     border-radius: 8px;
     overflow: hidden;
@@ -52,12 +51,27 @@
     line-height: 24px;
     word-wrap: break-word;
     text-decoration: none;
-  }
+  } */
   .header-sign-button {
-    background: #fff;
-    color: #181818;
+background: linear-gradient(262deg, #BD00CD -0.34%, #32376F 99.66%);  
+    color: #fff;
     min-width: 100px;
   }
+      #signUpButton{
+      border-radius: 8px;
+background: linear-gradient(262deg, #BD00CD -0.34%, #32376F 99.66%);
+    }
+
+
+    #logInButton{
+      text-decoration: none;
+      color: #222;
+font-family: Poppins;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+    }
   .divider {
     width: 1px;
     height: 20px;
@@ -109,6 +123,23 @@
       border-bottom: 1px solid #fff;
       margin-bottom: 10px;
     }
+
+
+    #signUpButton{
+      border-radius: 8px;
+background: linear-gradient(262deg, #BD00CD -0.34%, #32376F 99.66%);
+    }
+
+
+    #logInButton{
+      text-decoration: none;
+      color: #222;
+font-family: Poppins;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+    }
     .menu-icon div {
       width: 35px;
       height: 5px;
@@ -132,7 +163,7 @@
 </style>
 <div class="app-header-container">
   <a href="/" class="brand">
-    <img src="/assets/logo.svg" alt="7thgear.ai" />
+    <img src="../assets/logo.svg" alt="7thgear.ai" />
   </a>
   <div class="mobile-version">
     <div id="menu-icon" class="menu-icon">
@@ -142,22 +173,21 @@
     </div>
   </div>
   <div id="menu" class="menu">
-    <a id="menuItemHeaderJoinInterest" class="menu-item">
+    <!-- <a id="menuItemHeaderJoinInterest" class="menu-item">
       Join Interest List
-    </a>
+    </a> -->
     <a href="/signIn/" class="menu-item" target="_blank">Sign In</a>
-    <a href="/signUp/" class="menu-item" target="_blank">Sign Up</a>
+    <a href="/signUp/" id="signUpButton" class="menu-item" target="_blank">Sign Up</a>
   </div>
   <div class="element">
-    <div id="btnHeaderJoinInterest" class="primary-button header-join-button">
+    <!-- <div id="btnHeaderJoinInterest" class="primary-button header-join-button">
       Join Interest List
-    </div>
-    <div class="divider"></div>
+    </div> -->
 
-    <a class="element-button header-sign-button" href="/signIn/" target="_blank"
-      >Sign In</a
+    <a id="logInButton" href="/signIn/" target="_blank"
+      >Log In</a
     >
-    <a class="element-button header-sign-button" href="/signUp/" target="_blank"
+    <a id="signUpButton" class="element-button header-sign-button" href="/signUp/" target="_blank"
       >Sign Up</a
     >
   </div>

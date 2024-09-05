@@ -3,7 +3,9 @@
 :before {
   box-sizing: border-box;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 html {
   height: 100vh;
   padding: 0;
@@ -250,7 +252,7 @@ iframe {
 
 .primary-button {
   background: linear-gradient(103deg, #b902ca 12%, #32376f 100%);
-  box-shadow: 0px 24px 40px -12px rgba(185, 2, 202, 0.4);
+  box-shadow: 0 24px 40px -12px rgba(185, 2, 202, 0.4);
 }
 .join-interest-button {
   width: 240px;
