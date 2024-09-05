@@ -1,19 +1,82 @@
 <style>
-  #landing-placeholder {
+  /* #landing-placeholder {
     padding-top: 160px;
     padding-bottom: 80px;
     width: 100%;
-    background: #0e0e10;
+    background: #B6B5BE;
     min-height: 800px;
     position: relative;
-  }
+  } */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
   .landing-wrapper {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    height: 95vh;
+    background: #E7E6E9;
+    align-items: center;
     gap: 24px;
     padding: 0px 80px;
   }
-  .landing-gradiant-brand {
+
+  .section1 {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .section1-img {
+    flex: 1;
+    width: 50%;
+    /* This makes each section take up equal width (50%) */
+  }
+
+  .section1-img>img {
+    width: -webkit-fill-available;
+
+  }
+
+  .section1-heading {
+    color: #222;
+    font-family: Poppins;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  .section1-subheading {
+    color: #000;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .header-join-button {
+    padding: 10px 24px;
+    border-radius: 8px;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-family: Poppins;
+    display: inline-flex;
+    background: linear-gradient(262deg, #BD00CD -0.34%, #32376F 99.66%);
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+    border: none;
+    font-weight: 500;
+    line-height: 24px;
+    word-wrap: break-word;
+    text-decoration: none;
+  }
+
+  /* .landing-gradiant-brand {
     background: linear-gradient(90deg, #652492, #63fcba);
     background-clip: text;
     -webkit-background-clip: text;
@@ -22,17 +85,20 @@
     font-weight: 700;
     line-height: 84px;
     word-wrap: break-word;
-  }
-  .landing-header {
+  } */
+
+  /* .landing-header {
     color: white;
     font-size: 70px;
     font-weight: 700;
     line-height: 84px;
     word-wrap: break-word;
   }
+
   .landing-subtext {
     color: rgba(255, 255, 255, 0.6);
   }
+
   .vector-container {
     position: absolute;
     bottom: 0;
@@ -40,10 +106,11 @@
     float: right;
     width: 70%;
     height: 80%;
-    background-image: url("../assets/vector.png");
+    background-image: url("./assets/vector.png");
     background-size: cover;
     background-position: center;
-  }
+  } */
+
   /* #btnLandingJoinInterest {
     position: fixed;
     top: 450px;
@@ -54,45 +121,39 @@
     .landing-wrapper {
       padding: 0px 20px;
     }
+
     .landing-gradiant-brand {
       font-size: 50px;
       line-height: 62px;
     }
+
     .landing-header {
       font-size: 50px;
       line-height: 62px;
     }
+
     .vector-container {
       display: none;
     }
+    html {
+  scroll-behavior: smooth;
+}
+
   }
 </style>
-<div class="landing-wrapper">
-  <div>
-    <span class="landing-gradiant-brand">7thGear: </span>
-    <span class="landing-header">Gen AI powered Customer 360 Platform</span>
+<div id="section1" class="landing-wrapper">
+  <div  class="section1">
+    <span class="section1-heading">Introducing Our Configurable Native Gen AI Platform </span>
+    <span class="section1-subheading">Transform customer interactions into actionable insights, empower your team to
+      close more deals, track customer health
+      and share feedback across your organization.</span>
+      <a id="signUpButton" href="/signUp/" target="_blank">
+    <button  class="primary-button header-join-button"> Sign up</button>
+    </a>
   </div>
-  <div style="display: flex; flex-direction: column; gap: 40px">
-    <div>
-      <div>
-        <span class="primary-font-size landing-subtext"
-          >We help businesses maximize revenue growth from existing customers.
-          Account Management teams have immediate access to all
-        </span>
-        <span class="primary-font-size landing-subtext" style="color: white"
-          >“Stuff You Should Know About Customer”
-        </span>
-        <span class="primary-font-size landing-subtext"> (SYSKAC) </span>
-      </div>
-      <img
-        src="../assets/pen-scribble.svg"
-        alt="Pen Scribble"
-        style="padding-left: 400px"
-      />
-    </div>
+
+  <div class="section1-img">
+    <img src="../assets/hero_img1.svg" alt="hero_img1">
   </div>
-  <div id="btnLandingJoinInterest" class="primary-button join-interest-button">
-    Join Interest List
-  </div>
-  <div class="vector-container"></div>
+  <!-- <div class="vector-container"></div> -->
 </div>

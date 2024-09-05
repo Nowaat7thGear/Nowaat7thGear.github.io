@@ -1,81 +1,1121 @@
 <style>
-  #goals-placeholder {
-    position: relative;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 40px;
-    padding-top: 80px;
-  }
-  .goals-wrapper {
-    width: 100%;
-    height: 100%;
-    padding: 80px;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 40px;
-    display: inline-flex;
-    flex-direction: row;
-  }
-  .goals-content {
-    flex: 1 1 0;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 24px;
-    display: inline-flex;
-  }
-  .goals-background-gradiant {
-    width: 100%;
-    flex: 1 1 0;
-    border-radius: 34px;
-    position: relative;
-    background-image: url("../assets/goals-gradiant.png");
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-  }
-  .goals-image {
-    display: inline-block;
-    margin: 16px;
-    margin-top: 24px;
-  }
-  /* Media query for screens smaller than 768px (typical mobile screens) */
-  @media screen and (max-width: 767px) {
-    #goals-placeholder {
-      padding-top: 20px;
-      padding-bottom: 20px;
-    }
-    .goals-wrapper {
-      padding: 20px;
-      flex-direction: column !important;
-    }
-    .goals-content,
-    .background-gradiant {
-      flex: 0;
-    }
-    .goals-image {
-      width: 90%;
-      height: 90%;
-      margin-top: 16px;
-    }
-  }
+	/* #goals-placeholder {
+		position: relative;
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 40px;
+		padding-top: 80px;
+	}
+
+	.goals-wrapper {
+		width: 100%;
+		height: 100%;
+		padding: 80px;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 40px;
+		display: inline-flex;
+		flex-direction: row;
+	}
+
+	.goals-content {
+		flex: 1 1 0;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+		gap: 24px;
+		display: inline-flex;
+	}
+
+	.goals-background-gradiant {
+		width: 100%;
+		flex: 1 1 0;
+		border-radius: 34px;
+		position: relative;
+		background-image: url("./assets/goals-gradiant.png");
+		background-size: cover;
+		background-position: center;
+		text-align: center;
+	}
+
+	.goals-image {
+		display: inline-block;
+		margin: 16px;
+		margin-top: 24px;
+	}
+
+	/* Media query for screens smaller than 768px (typical mobile screens) */
+	/* @media screen and (max-width: 767px) {
+		#goals-placeholder {
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+
+		.goals-wrapper {
+			padding: 20px;
+			flex-direction: column !important;
+		}
+
+		.goals-content,
+		.background-gradiant {
+			flex: 0;
+		}
+
+		.goals-image {
+			width: 90%;
+			height: 90%;
+			margin-top: 16px;
+		}  */
+
+	/* .goals-wrapper {
+    background: #171717;
+    height: 95vh;
+  } */
+
+	.section2-main {
+		background: #171717;
+		height: 95vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 40px 80px;
+	}
+
+	.section2 {
+		display: flex;
+		gap: 40px;
+	}
+
+	.hero2-txt {
+		padding-top: 14px;
+		display: block;
+		color: #e3e3e3;
+		text-align: center;
+		font-family: Poppins;
+		font-size: 22px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+	}
+
+	.teams {
+		background: linear-gradient(248deg,
+				#32376f 0%,
+				#bd00cd 50%,
+				#32376f 100%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		font-family: Poppins;
+		font-size: 22px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		letter-spacing: 3.6px;
+	}
+
+	.section2-first,
+	.section2-second {
+		flex: 1;
+		/* Make each section take up equal width (50%) */
+	}
+
+	.section2-first {
+		position: relative;
+		padding: 40px 0;
+		margin: auto;
+		text-align: center;
+	}
+
+	.section2-first>video {
+		width: 100%;
+		z-index: 1;
+	}
+
+	#myVideo {
+		border-radius: 20px;
+		border: 3px solid #B6B5BE;
+		width: 100%;
+		height: auto;
+	}
+
+	#myVideo::-webkit-media-controls {
+		display: none !important;
+	}
+
+	#myVideo::-webkit-media-controls-enclosure {
+		display: none !important;
+	}
+
+	#myVideo::-webkit-media-controls-play-button {
+		display: none !important;
+	}
+
+	#myVideo::-webkit-media-controls-timeline {
+		display: none !important;
+	}
+
+	#myVideo::-webkit-media-controls-mute-button {
+		display: none !important;
+	}
+
+	#myVideo::-webkit-media-controls-volume-slider {
+		display: none !important;
+	}
+
+	#myVideo::-webkit-media-controls-current-time-display {
+		display: none !important;
+	}
+
+	#myVideo::-webkit-media-controls-time-remaining-display {
+		display: none !important;
+	}
+
+	#myVideo::-webkit-media-controls-fullscreen-button {
+		display: none !important;
+	}
+
+
+	.section2-second {
+		padding: 0 30px;
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+	}
+
+	.sec2-vec {
+		position: absolute;
+		bottom: -60px;
+		left: 40px;
+		height: 100%;
+		width: 100%;
+	}
+
+	.hero2-sec-head {
+		color: #fff;
+		font-family: Poppins;
+		font-size: 36px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 146.2%;
+		/* 70.176px */
+	}
+
+	.hero2-sec-subhead {
+		display: block;
+		color: rgba(255, 255, 255, 0.7);
+		font-family: Poppins;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 300;
+		line-height: 175.2%;
+		/* 42.048px */
+	}
+
+	.bullets {
+		color: rgba(255, 255, 255, 0.7);
+		font-family: Poppins;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 175.2%;
+	}
+
+	.hero2-sec-subhead ul li:nth-child(1),
+	ul li:nth-child(2) {
+		margin-bottom: 15px;
+	}
+
+	/* section 3 */
+	.section3-main {
+		background: #e7e6e9;
+		height: 95vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 40px 80px;
+	}
+
+	.section3 {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.section3-first,
+	.section3-second {
+		flex: 1;
+		/* Make each section take up equal width (50%) */
+	}
+
+	.section3-second {
+		position: relative;
+	}
+
+	.section2-second {
+		position: relative;
+		padding: 40px 0;
+		margin: auto;
+	}
+
+	/* .sec3-vec
+ {
+		position: absolute;
+		padding: 40px 0;
+		margin: auto;
+		text-align: center;
+	} */
+
+
+	.section3-second>video {
+		width: 100%;
+		position: relative;
+		z-index: 1;
+	}
+
+	.hero3-sec-head {
+		color: #222;
+		font-family: Poppins;
+		font-size: 36px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 146.2%;
+	}
+
+	.hero3-sec-subhead {
+		display: block;
+		color: #222;
+		font-family: Poppins;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 300;
+		line-height: 175.2%;
+		/* 42.048px */
+	}
+
+	.bullets3 {
+		color: #222;
+		font-family: Poppins;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 175.2%;
+	}
+
+	.hero3-sec-subhead ul li:nth-child(1),
+	ul li:nth-child(2) {
+		margin-bottom: 15px;
+	}
+
+	.hero3-txt {
+		padding-top: 14px;
+		display: block;
+		color: #222;
+		text-align: center;
+		font-family: Poppins;
+		font-size: 22px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+	}
+
+	.teams {
+		background: linear-gradient(248deg,
+				#32376f 0%,
+				#bd00cd 50%,
+				#32376f 100%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		font-family: Poppins;
+		font-size: 22px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		letter-spacing: 3.6px;
+	}
+
+	/* section4 css */
+
+	.section4-main {
+		background: #171717;
+		height: 95vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 40px 80px;
+	}
+
+	.section4 {
+		display: flex;
+		gap: 40px;
+	}
+
+	.hero4-txt {
+		padding-top: 14px;
+		display: block;
+		color: #e3e3e3;
+		text-align: center;
+		font-family: Poppins;
+		font-size: 22px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+	}
+
+	.teams {
+		background: linear-gradient(248deg,
+				#32376f 0%,
+				#bd00cd 50%,
+				#32376f 100%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		font-family: Poppins;
+		font-size: 22px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		letter-spacing: 3.6px;
+	}
+
+	.section4-first,
+	.section4-second {
+		flex: 1;
+		/* Make each section take up equal width (50%) */
+	}
+
+	.section4-first {
+		position: relative;
+		padding: 40px 0;
+		margin: auto;
+		text-align: center;
+	}
+
+	.section4-first>video {
+		width: 100%;
+		z-index: 1;
+	}
+
+	.section4-second {
+		padding: 0 30px;
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+	}
+
+	.section4-second {
+		position: relative;
+		padding: 40px 0;
+		margin: auto;
+	}
+
+	.sec4-vec {
+		height: 100%;
+		position: absolute;
+		bottom: -60px;
+		left: 40px;
+	}
+
+	.hero4-sec-head {
+		color: #fff;
+		font-family: Poppins;
+		font-size: 36px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 146.2%;
+		/* 70.176px */
+	}
+
+	.hero4-sec-subhead {
+		display: block;
+		color: rgba(255, 255, 255, 0.7);
+		font-family: Poppins;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 300;
+		line-height: 175.2%;
+		/* 42.048px */
+	}
+
+	.bullets {
+		color: rgba(255, 255, 255, 0.7);
+		font-family: Poppins;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 175.2%;
+	}
+
+	.hero4-sec-subhead ul li:nth-child(1),
+	ul li:nth-child(2) {
+		margin-bottom: 15px;
+	}
+
+	/* SECTION5 CSS STARTS HERE */
+
+	/* section 3 */
+	.section5-main {
+		background: #e7e6e9;
+		height: 95vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 40px 80px;
+	}
+
+	.section5 {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.section5-first,
+	.section5-second {
+		flex: 1;
+		/* Make each section take up equal width (50%) */
+	}
+
+	.section5-second {
+		position: relative;
+	}
+
+	.sec5-vec {
+		height: 125%;
+		position: absolute !important;
+		right: -15px;
+		opacity: 0.7;
+		z-index: 0 !important;
+		margin: auto;
+	}
+
+	.section5-second>video {
+		width: 100%;
+		position: relative;
+		z-index: 1;
+	}
+
+	.hero5-sec-head {
+		color: #222;
+		font-family: Poppins;
+		font-size: 36px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 146.2%;
+	}
+
+	.hero5-sec-subhead {
+		display: block;
+		color: #222;
+		font-family: Poppins;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 300;
+		line-height: 175.2%;
+		/* 42.048px */
+	}
+
+	.bullets3 {
+		color: #222;
+		font-family: Poppins;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 175.2%;
+	}
+
+	.hero5-sec-subhead ul li:nth-child(1),
+	ul li:nth-child(2) {
+		margin-bottom: 15px;
+	}
+
+	.hero5-txt {
+		padding-top: 14px;
+		display: block;
+		color: #222;
+		text-align: center;
+		font-family: Poppins;
+		font-size: 22px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+	}
+
+	.teams {
+		background: linear-gradient(248deg,
+				#32376f 0%,
+				#bd00cd 50%,
+				#32376f 100%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		font-family: Poppins;
+		font-size: 22px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		letter-spacing: 3.6px;
+	}
+
+	/* section6 code here */
+
+	.section6-main {
+		background: #2f2f2f;
+		height: 95vh;
+		display: flex;
+		justify-content: center;
+		position: relative;
+		overflow: hidden;
+		align-items: center;
+		padding: 40px 80px;
+	}
+
+	.section6 {
+		display: flex;
+		flex-direction: column;
+		width: 60%;
+		justify-content: center;
+		gap: 30px;
+		position: relative;
+	}
+
+	.cir1 {
+		height: 710px;
+		position: absolute;
+		bottom: -50%;
+		right: -21%;
+		width: 710px;
+		border: 1px solid #D9D9D9;
+		border-radius: 50%;
+	}
+
+	.cir2 {
+		height: 600px;
+		position: absolute;
+		bottom: -45%;
+		right: -19%;
+		width: 600px;
+		border: 1px solid #D9D9D9;
+		border-radius: 50%;
+	}
+
+	.cir3 {
+		height: 500px;
+		position: absolute;
+		bottom: -40%;
+		right: -18%;
+		width: 500px;
+		border: 1px solid #D9D9D9;
+		border-radius: 50%;
+	}
+
+	.cir4 {
+		height: 400px;
+		position: absolute;
+		bottom: -35%;
+		right: -17%;
+		width: 400px;
+		border: 1px solid #D9D9D9;
+		border-radius: 50%;
+	}
+
+	.cir5 {
+		height: 300px;
+		position: absolute;
+		bottom: -30%;
+		right: -16%;
+		width: 300px;
+		border: 1px solid #D9D9D9;
+		border-radius: 50%;
+	}
+
+	.section6>span {
+		text-align: center;
+		color: #e3e3e3;
+		text-align: center;
+		font-family: Poppins;
+		font-size: 36px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+	}
+
+	.section6>span>.crm {
+		background: linear-gradient(248deg,
+				#32376f 0%,
+				#bd00cd 50%,
+				#32376f 100%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		font-weight: 500;
+	}
+
+	.brands {
+		display: flex;
+		justify-content: space-between;
+	}
+
+
+
+
+
+	footer {
+		background-color: #f9f9f9;
+		font-family: Poppins, sans-serif;
+	}
+
+	.newsletter {
+		align-items: center;
+		display: flex;
+		padding: 40px 73px;
+		justify-content: space-between;
+	}
+
+	.newsletter h3 {
+		margin-bottom: 0px !important;
+
+		color: #222;
+
+		font-family: Poppins;
+		font-size: 24px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 175.2%;
+	}
+
+	.newsletter p {
+		color: #222;
+		font-family: Poppins;
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 175.2%;
+		/* 42.048px */
+		margin-top: 0px !important;
+		/* margin-bottom: 20px; */
+	}
+
+	.newsletter-input {
+		display: flex;
+		justify-content: center;
+		min-width: 450px;
+	}
+
+	.newsletter-input input[type="email"] {
+
+		font-family: Poppins;
+
+
+
+		padding: 10px;
+		font-size: 16px;
+		border: 1px solid #ccc;
+		border-radius: 5px 0 0 5px;
+		width: 70%;
+		outline: none;
+	}
+
+	.newsletter-input button {
+
+
+		font-family: Poppins;
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+
+
+		padding: 10px 20px;
+		font-size: 16px;
+		background-color: #000;
+		color: #fff;
+		border: none;
+		border-radius: 0 5px 5px 0;
+		cursor: pointer;
+	}
+
+	.newsletter-input button:hover {
+		background-color: #444;
+	}
+
+	.footer-top {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		padding: 0px 40px;
+		border-bottom: 1px solid #ddd;
+	}
+
+	.company-info {
+		padding: 55068% -657ppp 5555556px;
+		7]7ixcvc min-width: 295px;
+		margin-bottom: 20px;
+	}
+
+	.company-info .logo {
+		max-width: 150px;
+		margin-bottom: 20px;
+	}
+
+	.company-info>p {
+		color: #222;
+		font-family: Poppins;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 175.2%;
+		/* 42.048px */
+	}
+
+	.footer-links {
+		display: flex;
+		flex-wrap: wrap;
+		flex: 3;
+		justify-content: flex-end;
+	}
+
+	.footer-column {
+		min-width: 150px;
+		margin-bottom: 20px;
+	}
+
+	.footer-column h4 {
+		font-size: 18px;
+		margin-top: 0 !important;
+		color: #222;
+		font-family: Poppins;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 175.2%;
+		/* 42.048px */
+	}
+
+	.footer-column ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.footer-column ul li {
+		font-size: 14px;
+		margin-bottom: 8px;
+		color: #222;
+		font-family: Poppins;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 175.2%;
+		/* 42.048px */
+	}
+
+	.footer-column ul li a {
+
+		text-decoration: none;
+		color: #222;
+	}
+
+
+
+	.footer-column ul li:hover {
+		text-decoration: underline;
+		cursor: pointer;
+	}
+
+	.footer-bottom {
+		display: flex;
+		width: 100%;
+		gap: 100px;
+		justify-content: space-between;
+		align-items: flex-start;
+		flex-wrap: wrap;
+		padding: 40px;
+		font-size: 14px;
+		color: #666;
+	}
+
+	.footer-bottom p {
+		margin: 0;
+		color: #222;
+		font-family: Poppins;
+		font-size: 18px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 175.2%;
+	}
+
+	.social-icons {
+		display: flex;
+		align-items: center;
+	}
+
+	.social-icons span {
+		margin-right: 10px;
+		font-weight: bold;
+		color: #222;
+		font-family: Poppins;
+		font-size: 18px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 175.2%;
+		/* 42.048px */
+	}
+
+	.social-icons a {
+		display: inline-block;
+		margin-right: 10px;
+	}
+
+	.social-icons img {
+		width: 24px;
+		height: 24px;
+		transition: opacity 0.3s ease;
+	}
+
+	.social-icons img:hover {
+		opacity: 0.7;
+	}
 </style>
 <div class="goals-wrapper">
-  <div class="goals-content">
-    <div class="primary-header">Never miss a signal</div>
-    <div class="primary-font-size">
-      Access up to date information on all customer interactions (calls/
-      meetings/ action items) in one place. Be on top of your deliverables to
-      the customers with reminders.
-    </div>
-    <div id="btnGoalInterest" class="primary-button join-interest-button">
-      Join Interest List
-    </div>
-  </div>
-  <div class="goals-background-gradiant">
-    <img class="goals-image" src="../assets/goals.png" />
-  </div>
+	<div class="section2-main">
+		<div class="section2">
+			<div class="section2-first">
+				<video id="myVideo" autoplay muted playsinline loop>
+					<source src="../assets/sec2-vid.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
+				<img class="sec2-vec" src="../assets/section2-vec.svg" alt="" />
+				<span class="hero2-txt">Give Back time to your <span class="teams">Teams!</span>
+				</span>
+			</div>
+			<div class="section2-second">
+				<span class="hero2-sec-head">Effortless Client <br />
+					Interaction Tracking</span>
+				<span class="hero2-sec-subhead">Focus on client interactions without worrying about note-
+					<br />
+					taking. Our AI-powered assistant handles everything:</span>
+				<span class="hero2-sec-subhead">
+					<ul>
+						<li>
+							<span class="bullets">Note-taking:</span>
+							Automatically captures and organizes notes during
+							client meetings.
+						</li>
+						<li>
+							<span class="bullets"> Action items:</span>
+
+							Identifies and tracks actionable tasks.
+						</li>
+						<li>
+							<span class="bullets"> Summaries:</span>
+							Builds comprehensive summaries to send to clients.
+						</li>
+					</ul>
+				</span>
+				<span class="hero2-sec-subhead">Integrate seamlessly with your CRM, reducing your team's
+					manual workload and ensuring every client receives the
+					attention they deserve.</span>
+			</div>
+		</div>
+	</div>
+	<div class="section3-main">
+		<div class="section3">
+			<div class="section3-first">
+				<span class="hero3-sec-head">Extract Intelligence from Interactions</span>
+				<span class="hero3-sec-subhead">Our platform tracks key utterances, customized to your
+					company’s specific needs:</span>
+				<span class="hero3-sec-subhead">
+					<ul>
+						<li>
+							<span class="bullets3">Catalogs conversations:</span>
+							Organizes interactions into themes and topics of
+							interest.
+						</li>
+						<li>
+							<span class="bullets3"> Searchable data:</span>
+							Makes information easily searchable across clients,
+							meetings, and action items.
+						</li>
+					</ul>
+				</span>
+			</div>
+			<div class="section3-second">
+				<video id="myVideo" autoplay muted playsinline loop>
+					<source src="../assets/sec3-vid.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video> <img class="sec5-vec" src="../assets/sec3-vec.svg" alt="">
+				<span class="hero3-txt">Understand your clients <span class="teams">Better!</span>
+				</span>
+			</div>
+		</div>
+	</div>
+
+	<!-- section 4 here -->
+
+	<div class="section4-main">
+		<div class="section4">
+			<div class="section4-first">
+				<video id="myVideo" autoplay muted playsinline loop>
+					<source src="../assets/sec4-vid.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video> <img class="sec4-vec" src="../assets/sec4-vec.svg" alt="">
+				<span class="hero2-txt">Raise the Bar to Be the
+					<span class="teams">Best in Class!</span>
+				</span>
+			</div>
+			<div class="section4-second">
+				<span class="hero4-sec-head">Personalized Coaching</span>
+				<span class="hero4-sec-subhead">Enhance your team's performance with our platform:</span>
+				<span class="hero4-sec-subhead">
+					<ul>
+						<li>
+							<span class="bullets">Input playbook and player activities:</span>
+							Track performance and extract relevant insights.
+						</li>
+						<li>
+							<span class="bullets"> Coaching:</span>
+							Provide personalized feedback to your team members
+							based on real client interactions.
+						</li>
+					</ul>
+				</span>
+			</div>
+		</div>
+	</div>
+
+	<!-- section5 starts here -->
+	<div class="section5-main">
+		<div class="section5">
+			<div class="section5-first">
+				<span class="hero5-sec-head">Build Strong Relationships</span>
+				<span class="hero5-sec-subhead">Stay updated and build stronger relationships:</span>
+				<span class="hero5-sec-subhead">
+					<ul>
+						<li>
+							<span class="bullets3">Client insights:</span>
+							Get the latest information on your clients and <br> their
+							contacts.
+						</li>
+						<li>
+							<span class="bullets3">Contextualized nudges:</span>
+							Receive timely nudges to build <br> relationships beyond
+							formal interactions.
+						</li>
+					</ul>
+				</span>
+			</div>
+			<div class="section5-second">
+				<video id="myVideo" autoplay muted playsinline loop>
+					<source src="../assets/sec5-vid.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video> <img class="sec5-vec" src="../assets/sec6-vec.svg" alt="">
+				<span class="hero5-txt">Stay <span class="teams">Informed</span> &
+					<span class="teams">Connected!</span>
+				</span>
+			</div>
+		</div>
+	</div>
+
+	<!-- section6 starts here -->
+	<div class="section6-main">
+		<div class="section6">
+			<span>Enter the future of <span class="crm">CRM</span> </span>
+			<div class="brands">
+				<img src="../assets/brand1.svg" alt="" />
+				<img src="../assets/brand2.svg" alt="" />
+				<img src="../assets/brand3.svg" alt="" />
+				<img src="../assets/brand4.svg" alt="" />
+				<img src="../assets/brand5.svg" alt="" />
+				<img src="../assets/brand6.svg" alt="" />
+				<img src="../assets/brand7.svg" alt="" />
+				<img src="../assets/brand8.svg" alt="" />
+			</div>
+		</div>
+		<div class="cir1"></div>
+		<div class="cir2"></div>
+		<div class="cir3"></div>
+		<div class="cir4"></div>
+		<div class="cir5"></div>
+
+	</div>
+
+	<!-- section7 here -->
+
+	<div class="section7">
+		<footer>
+			<!-- <div class="newsletter">
+				<div class="newsletter-left">
+					<h3>Join our newsletter</h3>
+					<p>We’ll keep you updated with the amazing updates. No spam.</p>
+				</div>
+				<div class="newsletter-input">
+					<input type="email" placeholder="Enter your email here">
+					<button>Subscribe</button>
+				</div>
+			</div> -->
+			<div class="footer-top">
+				<div class="footer-bottom">
+					<div class="company-info">
+						<img src="../assets/logo.svg" alt="7thGear Logo" class="logo">
+						<p>Get ready to accelerate your growth <br> at the highest gear.</p>
+					</div>
+					<div class="footer-links">
+						<div class="footer-column">
+							<h4>Company</h4>
+							<ul>
+							<li><a href="/index.html#section1">About us</a></li>
+								<!-- <li>Careers</li>
+								<li>News</li> -->
+								<li><a href="/contact-us/" target="_blank">Contact us</a></li>
+								<!-- <li>Team</li> -->
+								<!-- <li>Investor Relations</li> -->
+							</ul>
+						</div>
+						<!-- <div class="footer-column">
+							<h4>Product</h4>
+							<ul>
+								<li>Overview</li>
+								<li>Features</li>
+								<li>Solutions</li>
+								<li>Schedule a Demo</li>
+								<li>Pricing</li>
+								<li>Releases</li>
+							</ul>
+						</div>
+						<div class="footer-column">
+							<h4>Resources</h4>
+							<ul>
+								<li>Blog</li>
+								<li>Newsletter</li>
+								<li>Events</li>
+								<li>Tutorials</li>
+								<li>Support</li>
+							</ul>
+						</div> -->
+						<div class="footer-column">
+							<h4>Legal</h4>
+							<ul>
+								<li><a href="/terms-of-service/" target="_blank">Terms of Service</a></li>
+								<li><a href="/privacy-policy/" target="_blank">Privacy Policy</a></li>
+								<!-- <li>Cookies</li>
+								<li>Licenses</li> -->
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<p>&copy;2024 7thGear. All rights reserved</p>
+				<!-- <div class="social-icons">
+					<span>Follow us</span>
+					<a href="#"><img src="../assets/x.svg" alt="Twitter"></a>
+					<a href="#"><img src="../assets/linkedin.svg" alt="LinkedIn"></a>
+					<a href="#"><img src="../assets/insta.svg" alt="Instagram"></a>
+					<a href="#"><img src="../assets/facebook.svg" alt="Facebook"></a>
+				</div> -->
+			</div>
+		</footer>
+
+	</div>
 </div>
