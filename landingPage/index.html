@@ -13,7 +13,7 @@
     display: flex;
     justify-content: center;
     height: 95vh;
-    background: #E7E6E9;
+    background-color: #E7E6E9; /* Apply background color */
     align-items: center;
     gap: 24px;
     padding: 0px 80px;
@@ -33,10 +33,17 @@
     /* This makes each section take up equal width (50%) */
   }
 
-  .section1-img>img {
+  .section1-img img {
     width: -webkit-fill-available;
-
+    width: -moz-available;
   }
+  
+  .section1-img img {
+  border-radius: 20px;
+  border: 5px solid #B6B5BE;
+  box-sizing: border-box;
+}
+
 
   .section1-heading {
     color: #222;
