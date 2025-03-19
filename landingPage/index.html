@@ -12,7 +12,8 @@
   .landing-wrapper {
     display: flex;
     justify-content: start;
-    height: 75vh;
+    height: auto;
+    min-height: 85vh;
     background-color: #E7E6E9; /* Apply background color */
     align-items: flex-start;
     gap: 24px;
@@ -151,14 +152,178 @@
 </style>
 <div id="section1" class="landing-wrapper">
   <div  class="section1">
-    <span class="section1-heading">Know what your clients want from you </span>
-    <span class="section1-subheading">Transform customer interactions into actionable insights, empower your team to
-      close more deals, track customer health
-      and share feedback across your organization.</span>
+    <span class="section1-heading">AI-Powered Customer Success: Reduce Churn, Drive Growth, and Unlock Revenue Opportunities</span>
+    <span class="section1-subheading">Customer Success teams are overwhelmed with data but lack real-time 
+      insights to act proactively. As a result, churn risks go unnoticed, and revenue opportunities slip away.</span>
+      <span class="section1-subheading">7thGear is an AI-driven Customer Interaction Intelligence Platform that analyzes emails,
+         meetings, and support tickets to deliver actionable insights through a centralized dashboard.
+          With real-time visibility, executives can make informed decisions and take proactive action—before it’s too late.</span>
   </div>
 
   <div class="section1-img">
-    <img style="border-radius: 20px; border: 5px solid #B6B5BE;" src="../assets/homeimg.svg" alt="hero_img1">
+    <img style="border-radius: 20px; border: 5px solid #B6B5BE;" src="../assets/Browcher-images/Clients-page-img.png" alt="hero_img1">
   </div>
   <!-- <div class="vector-container"></div> -->
 </div>
+<div class="why-us-container">
+  <h1 class="Main_Text">WHY US</h1>
+  <div class="main_box">
+
+    <!-- First Box -->
+    <div class="why-us-box">
+      <div class="icon-wrapper">  
+        <img src="../assets/Browcher-images/Browcher-img1.svg" alt="Icon">
+      </div> <!-- Proper closing -->
+      <h3>AI-powered Interaction Intelligence Platform</h3>
+      <p>Tailored client insights for smarter decision-making.</p>
+    </div>
+
+    <!-- Second Box -->
+    <div class="why-us-box">
+      <div class="icon-wrapper">  
+        <img src="../assets/Browcher-images/Browcher-img2.svg" alt="Icon">
+      </div>
+      <h3>Detect Imminent Churn</h3>
+      <p>Identify early churn risks and take proactive action.</p>
+    </div>
+
+    <!-- Third Box -->
+    <div class="why-us-box">
+      <div class="icon-wrapper">  
+        <img src="../assets/Browcher-images/Browcher-img3.svg" alt="Icon">
+      </div>
+      <h3>Boost Revenue</h3>
+      <p>Uncover upsell and cross-sell opportunities in real-time.</p>
+    </div>
+
+    <!-- Fourth Box -->
+    <div class="why-us-box">
+      <div class="icon-wrapper">  
+        <img src="../assets/Browcher-images/Browcher-img4.svg" alt="Icon">
+      </div>
+      <h3>Build Products Client Want</h3>
+      <p>Gather product feedback from every interaction.</p>
+    </div>
+
+  </div>
+</div>
+
+
+<style>
+  /* Center the entire section */
+  .why-us-container {
+  text-align: center;
+  padding: 40px 20px;
+  font-family: 'Poppins', sans-serif; /* Apply globally */
+  background-color: #E7E6E9;
+}
+.Main_Text {
+  font-size: 28px; /* Adjust font size */
+  font-weight: 400; /* Medium font weight */
+  text-align: center;
+  color: black;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  display: inline-block;
+}
+
+.Main_Text::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px; /* Adjust line position */
+  width: 120px; /* Adjust line width */
+  height: 2px; /* Line thickness */
+  background: linear-gradient(to right, rgba(214, 51, 255, 0), rgba(214, 51, 255, 1), rgba(214, 51, 255, 0)); /* Fades at both ends */
+  transform: translateX(-50%);
+}
+
+
+/* Grid layout for four boxes in one row */
+.main_box {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Four columns */
+  gap: 40px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: auto;
+  padding-top: 20px;
+}
+
+.why-us-box {
+  width: 290px;
+  height: 278px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden; /* Prevents ::before from overflowing */
+}
+
+/* Apply a gradient border only on the top and left sides */
+.why-us-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  border-top: 3px solid transparent;
+  border-left: 3px solid transparent;
+  background: linear-gradient(to bottom, rgba(214, 51, 255, 1), rgba(214, 51, 255, 0.1)) border-box;
+  -webkit-mask: linear-gradient(white 0 0) padding-box, linear-gradient(white 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.icon-wrapper {
+  width: 90px;
+  height: 90px;
+  margin-bottom: 15px;
+  background: #f9f2ff;
+  border-radius: 50%;
+  padding: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;       
+  align-items: center;           
+  overflow: hidden;
+}
+
+/* Style for the image */
+.icon-wrapper img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+
+.why-us-box h3 {
+  font-size: 16px;
+  color: #32376F;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.why-us-box p {
+  font-size: 14px;
+  color: #666;
+  font-weight: 400;
+}
+
+/* Ensure responsiveness */
+@media (max-width: 1200px) {
+  .main_box {
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); /* Adjusts to screen */
+  }
+}
+</style>

@@ -160,6 +160,33 @@ line-height: normal;
       transform: translate(0, -11px) rotate(45deg);
     }
   }
+  .header-nav {
+  display: flex;
+  gap: 32px; /* Space between links */
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1; /* Ensures equal spacing between logo and login button */
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #222;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #BD00CD;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 1024px) {
+  .header-nav {
+    display: none; /* Hide in mobile */
+  }
+}
+
 </style>
 <div class="app-header-container">
   <a href="/" class="brand">
@@ -183,6 +210,12 @@ line-height: normal;
     <!-- <div id="btnHeaderJoinInterest" class="primary-button header-join-button">
       Join Interest List
     </div> -->
+    <nav class="header-nav">
+      <a href="/product/" class="nav-link">Product</a>
+      <a href="/book-demo/" class="nav-link">Book a Demo</a>
+      <a href="/about-us/" class="nav-link">About Us</a>
+      <a href="/legal/" class="nav-link">Legal</a>
+    </nav>
 
     <a id="logInButton" href="/signIn/" target="_self"
       >Log In</a
